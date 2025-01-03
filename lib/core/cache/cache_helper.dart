@@ -1,71 +1,43 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
-  static late SharedPreferences sharedPreferences;
+  static SharedPreferences? _preferences;
 
-//! Here The Initialize of cache .
-  init() async {
-    sharedPreferences = await SharedPreferences.getInstance();
+  // Initialize the SharedPreferences instance
+  static Future<void> init() async {
+    _preferences = await SharedPreferences.getInstance();
   }
 
-//! this method to put data in local database using key
-
-  String? getDataString({
-    required String key,
-  }) {
-    return sharedPreferences.getString(key);
+  // Save a boolean value in SharedPreferences
+  static Future<bool> saveBool(
+      {required String key, required bool value}) async {
+    return await _preferences?.setBool(key, value) ?? false;
   }
 
-//! this method to put data in local database using key
-
-  Future<bool> saveData({required String key, required dynamic value}) async {
-    if (value is bool) {
-      return await sharedPreferences.setBool(key, value);
-    }
-    if (value is String) {
-      return await sharedPreferences.setString(key, value);
-    }
-
-    if (value is int) {
-      return await sharedPreferences.setInt(key, value);
-    } else {
-      return await sharedPreferences.setDouble(key, value);
-    }
+  // Get a boolean value from SharedPreferences
+  static bool? getBool({required String key}) {
+    return _preferences?.getBool(key);
   }
 
-//! this method to get data already saved in local database
-
-  dynamic getData({required String key}) {
-    return sharedPreferences.get(key);
+  // Save a string (language code) in SharedPreferences
+  static Future<bool> saveString(
+      {required String key, required String value}) async {
+    return await _preferences?.setString(key, value) ?? false;
   }
 
-//! remove data using specific key
-
-  Future<bool> removeData({required String key}) async {
-    return await sharedPreferences.remove(key);
+  // Get a string (language code) from SharedPreferences
+  static String? getString({required String key}) {
+    return _preferences?.getString(key);
   }
 
-//! this method to check if local database contains {key}
-  Future<bool> containsKey({required String key}) async {
-    return sharedPreferences.containsKey(key);
+  // Save the current selected language
+  static Future<void> saveLanguage(String languageCode) async {
+    await saveString(key: 'language', value: languageCode);
   }
 
-//! clear all data in the local database
-  Future<bool> clearData() async {
-    return await sharedPreferences.clear();
-  }
-
-//! this method to put data in local database using key
-  Future<dynamic> put({
-    required String key,
-    required dynamic value,
-  }) async {
-    if (value is String) {
-      return await sharedPreferences.setString(key, value);
-    } else if (value is bool) {
-      return await sharedPreferences.setBool(key, value);
-    } else {
-      return await sharedPreferences.setInt(key, value);
-    }
+  // Get the saved language code, defaulting to 'en' if not set
+  static String getSavedLanguage() {
+    return getString(key: 'language') ??
+        'en'; // Default to 'en' if no language is saved
   }
 }

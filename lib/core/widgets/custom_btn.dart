@@ -16,7 +16,7 @@ class CustomBtn extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryColor,
+          backgroundColor: AppColors.buttonColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -24,7 +24,7 @@ class CustomBtn extends StatelessWidget {
         child: Text(
           text,
           style: CustomTextStyles.poppins500style24
-              .copyWith(fontSize: 18, color: AppColors.offWhite),
+              .copyWith(fontSize: 18, color: AppColors.whtieColor),
         ),
       ),
     );

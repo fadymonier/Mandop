@@ -1,10 +1,21 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mandoob/core/routes/app_router.dart';
-import 'package:mandoob/core/utils/app_colors.dart';
+import 'package:mandoob/core/cache/cache_helper.dart';
+import 'package:mandoob/core/routes/app_router.dart'; // Make sure the router is correctly imported
+import 'package:mandoob/core/theme/theme_provider.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MandoobApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MandoobApp(),
+    ),
+  );
 }
 
 class MandoobApp extends StatelessWidget {
@@ -13,12 +24,13 @@ class MandoobApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(390, 844),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) => MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(scaffoldBackgroundColor: AppColors.offWhite),
+        themeMode: ThemeMode.system,
+        theme: Provider.of<ThemeProvider>(context).themeData,
         routerConfig: router,
       ),
     );

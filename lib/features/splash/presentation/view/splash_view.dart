@@ -13,7 +13,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    delayedNavigate(context, "/SignIn");
+    delayedNavigate(context, "/onBoarding");
   }
 
   @override
@@ -25,10 +25,9 @@ class _SplashViewState extends State<SplashView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/images/splashLogo.png",
-              fit: BoxFit.cover,
-              filterQuality: FilterQuality.high,
-              height: 300.h,
+              "assets/images/app_logo.png",
+              // fit: BoxFit.cover,
+              height: 150.h,
             )
           ],
         ),

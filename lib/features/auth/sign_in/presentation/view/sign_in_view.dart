@@ -31,10 +31,17 @@ class SignInView extends StatelessWidget {
             ),
           ),
           const SliverToBoxAdapter(
-            child: CustomTextField(labelText: AppStrings.emailAddress),
+            child: CustomTextField(
+              labelText: AppStrings.emailAddress,
+              obscureText: false,
+            ),
           ),
           const SliverToBoxAdapter(
-            child: CustomTextField(labelText: AppStrings.password),
+            child: CustomTextField(
+              showSuffixIcon: true,
+              labelText: AppStrings.password,
+              obscureText: true,
+            ),
           ),
           SliverToBoxAdapter(
             child: SizedBox(
@@ -46,7 +53,7 @@ class SignInView extends StatelessWidget {
                   onPressed: () {
                     customNavigate(context, "/Home");
                   },
-                  color: AppColors.primaryColor,
+                  color: AppColors.buttonColor,
                   text: AppStrings.signIn)),
         ],
       ),

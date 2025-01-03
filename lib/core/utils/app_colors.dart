@@ -1,11 +1,20 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
-  static Color primaryColor = const Color(0xffC49E85);
-  static Color offWhite = const Color(0xffF8F4F9);
-  static Color deepBrown = const Color(0xff6B4B3E);
-  static Color grey = const Color(0xffC4C4C4);
-  static Color deepGrey = const Color(0xff6F6460);
-  static Color lightGrey = const Color(0xffB4B4B4);
-  static Color black = const Color(0xff333333);
+  static Color scaffoldBackgroundColor = const Color(0xFFF3F8FF);
+  static Color buttonColor = const Color(0xFF2B7FFF);
+  static Color buttonColorWithOpacity =
+      const Color(0xFF2B7FFF).withOpacity(0.3);
+  static Color navBarIconSelectedColor = const Color(0xFF0569A9);
+  static Color navBarIconUnSelectedColor = const Color(0xFF374957);
+  static Color historyIconColor = const Color(0xFF374957);
+  static Color primaryFontBlackColor = const Color(0xFF110D24);
+  static Color emailAndPasswordFontGreyColor = const Color(0xFF757380);
+  static Color rememberMeFontColor = const Color(0xFF393649);
+  static Color textFieldBorderColor = const Color(0xFFEAEBEC);
+  static Color logOutColor = const Color(0xFF02253B);
+  static Color whtieColor = Colors.white;
+  static Color blackColor = Colors.black;
 }

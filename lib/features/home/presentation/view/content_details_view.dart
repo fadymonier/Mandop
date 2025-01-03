@@ -18,7 +18,7 @@ class ContentDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.primaryColor,
+        backgroundColor: AppColors.buttonColor,
         title: Text(title),
       ),
       body: Center(
