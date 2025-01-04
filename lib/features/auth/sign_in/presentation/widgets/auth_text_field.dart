@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
-import 'package:mandoob/core/utils/app_text_styles.dart';
 
 class CustomTextField extends StatefulWidget {
   final String labelText;
@@ -43,16 +43,23 @@ class _CustomTextFieldState extends State<CustomTextField> {
       child: TextField(
         obscureText: _obscureText,
         decoration: InputDecoration(
-          labelText: widget.labelText,
-          labelStyle: CustomTextStyles.poppins500style18,
+          filled: true,
+          fillColor: Colors.white,
+          // labelText: widget.labelText,
+          labelStyle: GoogleFonts.cairo(
+            color: AppColors.emailAndPasswordFontGreyColor,
+            fontSize: 16.sp,
+          ),
           enabledBorder: getBorderStyle(),
           focusedBorder: getBorderStyle(),
           border: getBorderStyle(),
           suffixIcon: widget.showSuffixIcon
               ? IconButton(
                   icon: Icon(
-                    _obscureText ? Icons.visibility : Icons.visibility_off,
-                    color: AppColors.buttonColor,
+                    _obscureText
+                        ? Icons.visibility_outlined
+                        : Icons.visibility_off,
+                    color: AppColors.emailAndPasswordFontGreyColor,
                   ),
                   onPressed: _togglePasswordVisibility,
                 )
@@ -65,7 +72,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
 OutlineInputBorder getBorderStyle() {
   return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(4.r),
-    borderSide: BorderSide(color: AppColors.emailAndPasswordFontGreyColor),
+    borderRadius: BorderRadius.circular(8.r),
+    borderSide: BorderSide(color: AppColors.whtieColor),
   );
 }

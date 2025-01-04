@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mandoob/core/utils/app_text_styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WelcomeTextWidget extends StatelessWidget {
   const WelcomeTextWidget({super.key, required this.text});
@@ -9,7 +10,7 @@ class WelcomeTextWidget extends StatelessWidget {
     return Align(
       child: Text(
         text,
-        style: CustomTextStyles.poppins600style28,
+        style: GoogleFonts.cairo(fontSize: 24.sp, fontWeight: FontWeight.w700),
       ),
     );
   }
