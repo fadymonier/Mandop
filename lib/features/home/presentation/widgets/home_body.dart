@@ -4,6 +4,7 @@ import 'package:mandoob/features/home/presentation/widgets/clients_number.dart';
 import 'package:mandoob/features/home/presentation/widgets/mandop_home_details.dart';
 import 'package:mandoob/features/home/presentation/widgets/orders_number.dart';
 import 'package:mandoob/features/home/presentation/widgets/total_points.dart';
+import 'package:mandoob/features/navbar/home_navbar.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({
@@ -24,9 +25,11 @@ class HomeBody extends StatelessWidget {
             children: [
               const ClientsNumberWidget(),
               SizedBox(width: 20.w),
-              const OrdersNumberWidget()
+              const OrdersNumberWidget(),
             ],
-          )
+          ),
+          const Spacer(),
+          const HomeNavbar(),
         ],
       ),
     );
