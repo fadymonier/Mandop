@@ -15,6 +15,10 @@ abstract class AppColors {
   static Color rememberMeFontColor = const Color(0xFF393649);
   static Color textFieldBorderColor = const Color(0xFFEAEBEC);
   static Color logOutColor = const Color(0xFF02253B);
+  static Color profileAvatarBGColor = const Color(0xFF52806A);
+  static Color historyTitleColor = const Color(0xFF044F7F);
+
   static Color whtieColor = Colors.white;
   static Color blackColor = Colors.black;
+  static Color errorColor = Colors.red;
 }

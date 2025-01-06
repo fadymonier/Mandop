@@ -30,7 +30,9 @@ class HomeNavbar extends StatelessWidget {
         Positioned(
           top: -35.h,
           child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).go('/History');
+              },
               child: Image.asset("assets/images/historyUnselected.png",
                   width: 70.w)),
         ),
