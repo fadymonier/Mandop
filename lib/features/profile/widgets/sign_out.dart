@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mandoob/core/cache/cache_keys.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
+import 'package:mandoob/core/cache/cache_helper.dart';
+import 'package:mandoob/core/api/dio_factory.dart';
 
 class SignOutWidget extends StatelessWidget {
   const SignOutWidget({super.key});
@@ -58,7 +61,13 @@ class SignOutWidget extends StatelessWidget {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {
+                    onPressed: () async {
+                      await SharedPrefHelper.clearAllSecuredData();
+                      await SharedPrefHelper.removeData(
+                          SharedPrefKeys.userToken);
+
+                      DioFactory.removeTokenFromHeader();
+
                       Navigator.of(context).pop(true); // User confirms
                     },
                     child: Text(

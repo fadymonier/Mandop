@@ -1,43 +1,98 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class CacheHelper {
-  static SharedPreferences? _preferences;
+class SharedPrefHelper {
+  // private constructor as I don't want to allow creating an instance of this class itself.
+  SharedPrefHelper._();
 
-  // Initialize the SharedPreferences instance
-  static Future<void> init() async {
-    _preferences = await SharedPreferences.getInstance();
+  /// Removes a value from SharedPreferences with given [key].
+  static removeData(String key) async {
+    debugPrint('SharedPrefHelper : data with key : $key has been removed');
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    await sharedPreferences.remove(key);
   }
 
-  // Save a boolean value in SharedPreferences
-  static Future<bool> saveBool(
-      {required String key, required bool value}) async {
-    return await _preferences?.setBool(key, value) ?? false;
+  /// Removes all keys and values in the SharedPreferences
+  static clearAllData() async {
+    debugPrint('SharedPrefHelper : all data has been cleared');
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    await sharedPreferences.clear();
   }
 
-  // Get a boolean value from SharedPreferences
-  static bool? getBool({required String key}) {
-    return _preferences?.getBool(key);
+  /// Saves a [value] with a [key] in the SharedPreferences.
+  static setData(String key, value) async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    debugPrint("SharedPrefHelper : setData with key : $key and value : $value");
+    switch (value.runtimeType) {
+      case const (String):
+        await sharedPreferences.setString(key, value);
+        break;
+      case const (int):
+        await sharedPreferences.setInt(key, value);
+        break;
+      case const (bool):
+        await sharedPreferences.setBool(key, value);
+        break;
+      case const (double):
+        await sharedPreferences.setDouble(key, value);
+        break;
+      default:
+        return null;
+    }
   }
 
-  // Save a string (language code) in SharedPreferences
-  static Future<bool> saveString(
-      {required String key, required String value}) async {
-    return await _preferences?.setString(key, value) ?? false;
+  /// Gets a bool value from SharedPreferences with given [key].
+  static getBool(String key) async {
+    debugPrint('SharedPrefHelper : getBool with key : $key');
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    return sharedPreferences.getBool(key) ?? false;
   }
 
-  // Get a string (language code) from SharedPreferences
-  static String? getString({required String key}) {
-    return _preferences?.getString(key);
+  /// Gets a double value from SharedPreferences with given [key].
+  static getDouble(String key) async {
+    debugPrint('SharedPrefHelper : getDouble with key : $key');
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    return sharedPreferences.getDouble(key) ?? 0.0;
   }
 
-  // Save the current selected language
-  static Future<void> saveLanguage(String languageCode) async {
-    await saveString(key: 'language', value: languageCode);
+  /// Gets an int value from SharedPreferences with given [key].
+  static getInt(String key) async {
+    debugPrint('SharedPrefHelper : getInt with key : $key');
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    return sharedPreferences.getInt(key) ?? 0;
   }
 
-  // Get the saved language code, defaulting to 'en' if not set
-  static String getSavedLanguage() {
-    return getString(key: 'language') ??
-        'en'; // Default to 'en' if no language is saved
+  /// Gets an String value from SharedPreferences with given [key].
+  static getString(String key) async {
+    debugPrint('SharedPrefHelper : getString with key : $key');
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    return sharedPreferences.getString(key) ?? '';
   }
+
+  /// Saves a [value] with a [key] in the FlutterSecureStorage.
+  static setSecuredString(String key, String value) async {
+    const flutterSecureStorage = FlutterSecureStorage();
+    debugPrint(
+        "FlutterSecureStorage : setSecuredString with key : $key and value : $value");
+    await flutterSecureStorage.write(key: key, value: value);
+  }
+
+  /// Gets an String value from FlutterSecureStorage with given [key].
+  static getSecuredString(String key) async {
+    const flutterSecureStorage = FlutterSecureStorage();
+    debugPrint('FlutterSecureStorage : getSecuredString with key :');
+    return await flutterSecureStorage.read(key: key) ?? '';
+  }
+
+  /// Removes all keys and values in the FlutterSecureStorage
+  static clearAllSecuredData() async {
+    debugPrint('FlutterSecureStorage : all data has been cleared');
+    const flutterSecureStorage = FlutterSecureStorage();
+    await flutterSecureStorage.deleteAll();
+  }
+
+  static init() {}
+
+  static void saveBool({required String key, required bool value}) {}
 }

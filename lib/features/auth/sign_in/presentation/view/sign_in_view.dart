@@ -1,41 +1,60 @@
-// ignore_for_file: deprecated_member_use, library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mandoob/core/functions/navigation.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
 import 'package:mandoob/core/widgets/custom_btn.dart';
+import 'package:mandoob/features/auth/sign_in/data/models/login_request_body.dart';
+import 'package:mandoob/features/auth/sign_in/logic/cubit/login_cubit.dart';
 import 'package:mandoob/features/auth/sign_in/presentation/widgets/auth_text_field.dart';
+import 'package:mandoob/features/auth/sign_in/presentation/widgets/login_bloc_listener.dart';
 import 'package:mandoob/features/auth/sign_in/presentation/widgets/remember_me.dart';
 import 'package:mandoob/features/auth/sign_in/presentation/widgets/welcome_text_widget.dart';
 
-class SignInView extends StatelessWidget {
+class SignInView extends StatefulWidget {
   const SignInView({super.key});
+
+  @override
+  State<SignInView> createState() => _SignInViewState();
+}
+
+class _SignInViewState extends State<SignInView> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  void _onSignInPressed() {
+    if (_formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates(LoginRequestBody(
+            email: _emailController.text,
+            password: _passwordController.text,
+          ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.scaffoldBackgroundColor,
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0.r),
-          child: CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 200.h,
-                ),
-              ),
-              const SliverToBoxAdapter(
-                child: WelcomeTextWidget(text: "تسجيل الدخول"),
-              ),
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 80.h,
-                ),
-              ),
-              SliverToBoxAdapter(
-                child: Padding(
+      backgroundColor: AppColors.scaffoldBackgroundColor,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0.r),
+        child: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(height: 200.h),
+                const WelcomeTextWidget(text: "تسجيل الدخول"),
+                SizedBox(height: 80.h),
+                Padding(
                   padding: EdgeInsets.only(right: 8.0.r),
                   child: Text(
                     textAlign: TextAlign.right,
@@ -46,18 +65,13 @@ class SignInView extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              const SliverToBoxAdapter(
-                child: CustomTextField(
+                CustomTextField(
                   labelText: "البريد الالكتروني",
                   obscureText: false,
+                  controller: _emailController,
                 ),
-              ),
-              SliverToBoxAdapter(
-                child: SizedBox(height: 16.h),
-              ),
-              SliverToBoxAdapter(
-                child: Padding(
+                SizedBox(height: 16.h),
+                Padding(
                   padding: EdgeInsets.only(right: 8.0.r),
                   child: Text(
                     textAlign: TextAlign.right,
@@ -68,35 +82,26 @@ class SignInView extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              const SliverToBoxAdapter(
-                child: CustomTextField(
+                CustomTextField(
                   showSuffixIcon: true,
                   labelText: "كلمة المرور",
                   obscureText: true,
+                  controller: _passwordController,
                 ),
-              ),
-              SliverToBoxAdapter(
-                child: SizedBox(
-                    height: 16.h), // Add space between password and checkbox
-              ),
-              const SliverToBoxAdapter(
-                child: RememberMeCheckbox(),
-              ),
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 30.h,
+                SizedBox(height: 16.h),
+                const RememberMeCheckbox(),
+                SizedBox(height: 30.h),
+                CustomBtn(
+                  onPressed: () => _onSignInPressed(),
+                  color: AppColors.buttonColor,
+                  text: "تسجيل الدخول",
                 ),
-              ),
-              SliverToBoxAdapter(
-                  child: CustomBtn(
-                      onPressed: () {
-                        customNavigate(context, "/Home");
-                      },
-                      color: AppColors.buttonColor,
-                      text: "تسجيل الدخول")),
-            ],
+                const LoginBlocListener(),
+              ],
+            ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

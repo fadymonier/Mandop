@@ -9,11 +9,13 @@ class CustomTextField extends StatefulWidget {
   final String labelText;
   final bool obscureText;
   final bool showSuffixIcon;
+  final TextEditingController controller;
 
   const CustomTextField({
     super.key,
     required this.labelText,
     required this.obscureText,
+    required this.controller,
     this.showSuffixIcon = false,
   });
 
@@ -40,12 +42,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 8.0.r, left: 8.r, top: 24.r),
-      child: TextField(
+      child: TextFormField(
+        controller: widget.controller,
         obscureText: _obscureText,
         decoration: InputDecoration(
           filled: true,
           fillColor: Colors.white,
-          // labelText: widget.labelText,
           labelStyle: GoogleFonts.cairo(
             color: AppColors.emailAndPasswordFontGreyColor,
             fontSize: 16.sp,
@@ -65,6 +67,18 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 )
               : null,
         ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return Text(
+              'هذا الحقل مطلوب',
+              style: GoogleFonts.cairo(
+                color: AppColors.emailAndPasswordFontGreyColor,
+                fontSize: 14.sp,
+              ),
+            ).data; // Use .data to pass the styled string to the validator
+          }
+          return null;
+        },
       ),
     );
   }

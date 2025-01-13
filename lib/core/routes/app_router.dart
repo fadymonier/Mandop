@@ -1,4 +1,7 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mandoob/core/services/dependency_injection.dart';
+import 'package:mandoob/features/auth/sign_in/logic/cubit/login_cubit.dart';
 import 'package:mandoob/features/auth/sign_in/presentation/view/sign_in_view.dart';
 import 'package:mandoob/features/history/presentation/dates_view.dart';
 import 'package:mandoob/features/history/presentation/history_view.dart';
@@ -19,7 +22,10 @@ final GoRouter router = GoRouter(routes: [
   ),
   GoRoute(
     path: "/SignIn",
-    builder: (context, state) => const SignInView(),
+    builder: (context, state) => BlocProvider(
+      create: (context) => getit<LoginCubit>(),
+      child: const SignInView(),
+    ),
   ),
   GoRoute(
     path: "/Home",
