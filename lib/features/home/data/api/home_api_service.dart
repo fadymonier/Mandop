@@ -12,5 +12,5 @@ abstract class HomeApiService {
   @GET(ApiConstnats.home)
   Future<HomeResponseModel> getHomeData();
   @GET(ApiConstnats.profile)
-  Future<MandopHomeDetailsResponseModel> getMandopHomeDetailsData();
+  Future<MandopDataRM> getMandopHomeDetailsData();
 }

@@ -7,8 +7,7 @@ class HomeMandopDetailsRepo {
   final HomeApiService _homeApiService;
 
   HomeMandopDetailsRepo(this._homeApiService);
-  Future<ApiResult<MandopHomeDetailsResponseModel>>
-      getMandopHomeDetails() async {
+  Future<ApiResult<MandopDataRM>> getMandopHomeDetails() async {
     try {
       final response = await _homeApiService.getMandopHomeDetailsData();
       return ApiResult.success(response);

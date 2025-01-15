@@ -20,8 +20,7 @@ mixin _$HomeManopDetailsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() homeMandopDetailsLoading,
-    required TResult Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)
+    required TResult Function(MandopDataRM mandopHomeDetailsResponseModel)
         homeMandopDetailsSuccess,
     required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) =>
@@ -30,8 +29,7 @@ mixin _$HomeManopDetailsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? homeMandopDetailsLoading,
-    TResult? Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)?
+    TResult? Function(MandopDataRM mandopHomeDetailsResponseModel)?
         homeMandopDetailsSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) =>
@@ -40,8 +38,7 @@ mixin _$HomeManopDetailsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? homeMandopDetailsLoading,
-    TResult Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)?
+    TResult Function(MandopDataRM mandopHomeDetailsResponseModel)?
         homeMandopDetailsSuccess,
     TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
@@ -50,30 +47,28 @@ mixin _$HomeManopDetailsState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_HomeMandopDetailsLoading value)
+    required TResult Function(HomeMandopDetailsLoading value)
         homeMandopDetailsLoading,
-    required TResult Function(_HomeMandopDetailsSuccess value)
+    required TResult Function(HomeMandopDetailsSuccess value)
         homeMandopDetailsSuccess,
-    required TResult Function(_HomeMandopDetailsError value)
+    required TResult Function(HomeMandopDetailsError value)
         homeMandopDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_HomeMandopDetailsLoading value)?
-        homeMandopDetailsLoading,
-    TResult? Function(_HomeMandopDetailsSuccess value)?
-        homeMandopDetailsSuccess,
-    TResult? Function(_HomeMandopDetailsError value)? homeMandopDetailsError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
-    TResult Function(_HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
-    TResult Function(_HomeMandopDetailsError value)? homeMandopDetailsError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -144,8 +139,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() homeMandopDetailsLoading,
-    required TResult Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)
+    required TResult Function(MandopDataRM mandopHomeDetailsResponseModel)
         homeMandopDetailsSuccess,
     required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
@@ -157,8 +151,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? homeMandopDetailsLoading,
-    TResult? Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)?
+    TResult? Function(MandopDataRM mandopHomeDetailsResponseModel)?
         homeMandopDetailsSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
@@ -170,8 +163,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? homeMandopDetailsLoading,
-    TResult Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)?
+    TResult Function(MandopDataRM mandopHomeDetailsResponseModel)?
         homeMandopDetailsSuccess,
     TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
@@ -186,11 +178,11 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_HomeMandopDetailsLoading value)
+    required TResult Function(HomeMandopDetailsLoading value)
         homeMandopDetailsLoading,
-    required TResult Function(_HomeMandopDetailsSuccess value)
+    required TResult Function(HomeMandopDetailsSuccess value)
         homeMandopDetailsSuccess,
-    required TResult Function(_HomeMandopDetailsError value)
+    required TResult Function(HomeMandopDetailsError value)
         homeMandopDetailsError,
   }) {
     return initial(this);
@@ -200,11 +192,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_HomeMandopDetailsLoading value)?
-        homeMandopDetailsLoading,
-    TResult? Function(_HomeMandopDetailsSuccess value)?
-        homeMandopDetailsSuccess,
-    TResult? Function(_HomeMandopDetailsError value)? homeMandopDetailsError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
   }) {
     return initial?.call(this);
   }
@@ -213,9 +203,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
-    TResult Function(_HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
-    TResult Function(_HomeMandopDetailsError value)? homeMandopDetailsError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -253,7 +243,7 @@ class __$$HomeMandopDetailsLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeMandopDetailsLoadingImpl implements _HomeMandopDetailsLoading {
+class _$HomeMandopDetailsLoadingImpl implements HomeMandopDetailsLoading {
   const _$HomeMandopDetailsLoadingImpl();
 
   @override
@@ -276,8 +266,7 @@ class _$HomeMandopDetailsLoadingImpl implements _HomeMandopDetailsLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() homeMandopDetailsLoading,
-    required TResult Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)
+    required TResult Function(MandopDataRM mandopHomeDetailsResponseModel)
         homeMandopDetailsSuccess,
     required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
@@ -289,8 +278,7 @@ class _$HomeMandopDetailsLoadingImpl implements _HomeMandopDetailsLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? homeMandopDetailsLoading,
-    TResult? Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)?
+    TResult? Function(MandopDataRM mandopHomeDetailsResponseModel)?
         homeMandopDetailsSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
@@ -302,8 +290,7 @@ class _$HomeMandopDetailsLoadingImpl implements _HomeMandopDetailsLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? homeMandopDetailsLoading,
-    TResult Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)?
+    TResult Function(MandopDataRM mandopHomeDetailsResponseModel)?
         homeMandopDetailsSuccess,
     TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
@@ -318,11 +305,11 @@ class _$HomeMandopDetailsLoadingImpl implements _HomeMandopDetailsLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_HomeMandopDetailsLoading value)
+    required TResult Function(HomeMandopDetailsLoading value)
         homeMandopDetailsLoading,
-    required TResult Function(_HomeMandopDetailsSuccess value)
+    required TResult Function(HomeMandopDetailsSuccess value)
         homeMandopDetailsSuccess,
-    required TResult Function(_HomeMandopDetailsError value)
+    required TResult Function(HomeMandopDetailsError value)
         homeMandopDetailsError,
   }) {
     return homeMandopDetailsLoading(this);
@@ -332,11 +319,9 @@ class _$HomeMandopDetailsLoadingImpl implements _HomeMandopDetailsLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_HomeMandopDetailsLoading value)?
-        homeMandopDetailsLoading,
-    TResult? Function(_HomeMandopDetailsSuccess value)?
-        homeMandopDetailsSuccess,
-    TResult? Function(_HomeMandopDetailsError value)? homeMandopDetailsError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
   }) {
     return homeMandopDetailsLoading?.call(this);
   }
@@ -345,9 +330,9 @@ class _$HomeMandopDetailsLoadingImpl implements _HomeMandopDetailsLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
-    TResult Function(_HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
-    TResult Function(_HomeMandopDetailsError value)? homeMandopDetailsError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (homeMandopDetailsLoading != null) {
@@ -357,8 +342,8 @@ class _$HomeMandopDetailsLoadingImpl implements _HomeMandopDetailsLoading {
   }
 }
 
-abstract class _HomeMandopDetailsLoading implements HomeManopDetailsState {
-  const factory _HomeMandopDetailsLoading() = _$HomeMandopDetailsLoadingImpl;
+abstract class HomeMandopDetailsLoading implements HomeManopDetailsState {
+  const factory HomeMandopDetailsLoading() = _$HomeMandopDetailsLoadingImpl;
 }
 
 /// @nodoc
@@ -368,7 +353,7 @@ abstract class _$$HomeMandopDetailsSuccessImplCopyWith<$Res> {
           $Res Function(_$HomeMandopDetailsSuccessImpl) then) =
       __$$HomeMandopDetailsSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel});
+  $Res call({MandopDataRM mandopHomeDetailsResponseModel});
 }
 
 /// @nodoc
@@ -392,18 +377,18 @@ class __$$HomeMandopDetailsSuccessImplCopyWithImpl<$Res>
       null == mandopHomeDetailsResponseModel
           ? _value.mandopHomeDetailsResponseModel
           : mandopHomeDetailsResponseModel // ignore: cast_nullable_to_non_nullable
-              as MandopHomeDetailsResponseModel,
+              as MandopDataRM,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HomeMandopDetailsSuccessImpl implements _HomeMandopDetailsSuccess {
+class _$HomeMandopDetailsSuccessImpl implements HomeMandopDetailsSuccess {
   const _$HomeMandopDetailsSuccessImpl(this.mandopHomeDetailsResponseModel);
 
   @override
-  final MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel;
+  final MandopDataRM mandopHomeDetailsResponseModel;
 
   @override
   String toString() {
@@ -438,8 +423,7 @@ class _$HomeMandopDetailsSuccessImpl implements _HomeMandopDetailsSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() homeMandopDetailsLoading,
-    required TResult Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)
+    required TResult Function(MandopDataRM mandopHomeDetailsResponseModel)
         homeMandopDetailsSuccess,
     required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
@@ -451,8 +435,7 @@ class _$HomeMandopDetailsSuccessImpl implements _HomeMandopDetailsSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? homeMandopDetailsLoading,
-    TResult? Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)?
+    TResult? Function(MandopDataRM mandopHomeDetailsResponseModel)?
         homeMandopDetailsSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
@@ -464,8 +447,7 @@ class _$HomeMandopDetailsSuccessImpl implements _HomeMandopDetailsSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? homeMandopDetailsLoading,
-    TResult Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)?
+    TResult Function(MandopDataRM mandopHomeDetailsResponseModel)?
         homeMandopDetailsSuccess,
     TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
@@ -480,11 +462,11 @@ class _$HomeMandopDetailsSuccessImpl implements _HomeMandopDetailsSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_HomeMandopDetailsLoading value)
+    required TResult Function(HomeMandopDetailsLoading value)
         homeMandopDetailsLoading,
-    required TResult Function(_HomeMandopDetailsSuccess value)
+    required TResult Function(HomeMandopDetailsSuccess value)
         homeMandopDetailsSuccess,
-    required TResult Function(_HomeMandopDetailsError value)
+    required TResult Function(HomeMandopDetailsError value)
         homeMandopDetailsError,
   }) {
     return homeMandopDetailsSuccess(this);
@@ -494,11 +476,9 @@ class _$HomeMandopDetailsSuccessImpl implements _HomeMandopDetailsSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_HomeMandopDetailsLoading value)?
-        homeMandopDetailsLoading,
-    TResult? Function(_HomeMandopDetailsSuccess value)?
-        homeMandopDetailsSuccess,
-    TResult? Function(_HomeMandopDetailsError value)? homeMandopDetailsError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
   }) {
     return homeMandopDetailsSuccess?.call(this);
   }
@@ -507,9 +487,9 @@ class _$HomeMandopDetailsSuccessImpl implements _HomeMandopDetailsSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
-    TResult Function(_HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
-    TResult Function(_HomeMandopDetailsError value)? homeMandopDetailsError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (homeMandopDetailsSuccess != null) {
@@ -519,12 +499,12 @@ class _$HomeMandopDetailsSuccessImpl implements _HomeMandopDetailsSuccess {
   }
 }
 
-abstract class _HomeMandopDetailsSuccess implements HomeManopDetailsState {
-  const factory _HomeMandopDetailsSuccess(
-          final MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel) =
+abstract class HomeMandopDetailsSuccess implements HomeManopDetailsState {
+  const factory HomeMandopDetailsSuccess(
+          final MandopDataRM mandopHomeDetailsResponseModel) =
       _$HomeMandopDetailsSuccessImpl;
 
-  MandopHomeDetailsResponseModel get mandopHomeDetailsResponseModel;
+  MandopDataRM get mandopHomeDetailsResponseModel;
 
   /// Create a copy of HomeManopDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -571,7 +551,7 @@ class __$$HomeMandopDetailsErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeMandopDetailsErrorImpl implements _HomeMandopDetailsError {
+class _$HomeMandopDetailsErrorImpl implements HomeMandopDetailsError {
   const _$HomeMandopDetailsErrorImpl(this.errorHandler);
 
   @override
@@ -608,8 +588,7 @@ class _$HomeMandopDetailsErrorImpl implements _HomeMandopDetailsError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() homeMandopDetailsLoading,
-    required TResult Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)
+    required TResult Function(MandopDataRM mandopHomeDetailsResponseModel)
         homeMandopDetailsSuccess,
     required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
@@ -621,8 +600,7 @@ class _$HomeMandopDetailsErrorImpl implements _HomeMandopDetailsError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? homeMandopDetailsLoading,
-    TResult? Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)?
+    TResult? Function(MandopDataRM mandopHomeDetailsResponseModel)?
         homeMandopDetailsSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
@@ -634,8 +612,7 @@ class _$HomeMandopDetailsErrorImpl implements _HomeMandopDetailsError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? homeMandopDetailsLoading,
-    TResult Function(
-            MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel)?
+    TResult Function(MandopDataRM mandopHomeDetailsResponseModel)?
         homeMandopDetailsSuccess,
     TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
@@ -650,11 +627,11 @@ class _$HomeMandopDetailsErrorImpl implements _HomeMandopDetailsError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_HomeMandopDetailsLoading value)
+    required TResult Function(HomeMandopDetailsLoading value)
         homeMandopDetailsLoading,
-    required TResult Function(_HomeMandopDetailsSuccess value)
+    required TResult Function(HomeMandopDetailsSuccess value)
         homeMandopDetailsSuccess,
-    required TResult Function(_HomeMandopDetailsError value)
+    required TResult Function(HomeMandopDetailsError value)
         homeMandopDetailsError,
   }) {
     return homeMandopDetailsError(this);
@@ -664,11 +641,9 @@ class _$HomeMandopDetailsErrorImpl implements _HomeMandopDetailsError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_HomeMandopDetailsLoading value)?
-        homeMandopDetailsLoading,
-    TResult? Function(_HomeMandopDetailsSuccess value)?
-        homeMandopDetailsSuccess,
-    TResult? Function(_HomeMandopDetailsError value)? homeMandopDetailsError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
   }) {
     return homeMandopDetailsError?.call(this);
   }
@@ -677,9 +652,9 @@ class _$HomeMandopDetailsErrorImpl implements _HomeMandopDetailsError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
-    TResult Function(_HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
-    TResult Function(_HomeMandopDetailsError value)? homeMandopDetailsError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (homeMandopDetailsError != null) {
@@ -689,8 +664,8 @@ class _$HomeMandopDetailsErrorImpl implements _HomeMandopDetailsError {
   }
 }
 
-abstract class _HomeMandopDetailsError implements HomeManopDetailsState {
-  const factory _HomeMandopDetailsError(final ErrorHandler errorHandler) =
+abstract class HomeMandopDetailsError implements HomeManopDetailsState {
+  const factory HomeMandopDetailsError(final ErrorHandler errorHandler) =
       _$HomeMandopDetailsErrorImpl;
 
   ErrorHandler get errorHandler;

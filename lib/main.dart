@@ -13,8 +13,8 @@ void main() async {
   await SharedPrefHelper.init();
   await ScreenUtil.ensureScreenSize();
   await checkIfLoggedInUser();
-
   setupGetIt();
+
   runApp(
     const MandoobApp(),
   );

@@ -3,20 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'mandop_home_details_response_model.g.dart';
 
 @JsonSerializable()
-class MandopHomeDetailsResponseModel {
-  final User user;
-  final Branch branch;
-
-  MandopHomeDetailsResponseModel({required this.user, required this.branch});
-
-  factory MandopHomeDetailsResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$MandopHomeDetailsResponseModelFromJson(json);
-
-  Map<String, dynamic> toJson() => _$MandopHomeDetailsResponseModelToJson(this);
-}
-
-@JsonSerializable()
-class User {
+class MandopDataRM {
   @JsonKey(name: 'f_name')
   final String firstName;
 
@@ -26,22 +13,43 @@ class User {
   @JsonKey(name: 'profile_image')
   final String profileImage;
 
-  User({
+  @JsonKey(name: 'email')
+  final String email;
+
+  @JsonKey(name: 'phone_number')
+  final String phoneNumber;
+
+  @JsonKey(name: 'identity_image')
+  final List<String> identityImage;
+
+  MandopDataRM({
     required this.firstName,
     required this.lastName,
     required this.profileImage,
+    required this.email,
+    required this.phoneNumber,
+    required this.identityImage,
   });
 
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  factory MandopDataRM.fromJson(Map<String, dynamic> json) =>
+      _$MandopDataRMFromJson(json);
 
-  Map<String, dynamic> toJson() => _$UserToJson(this);
+  Map<String, dynamic> toJson() => _$MandopDataRMToJson(this);
 }
 
 @JsonSerializable()
 class Branch {
   final String name;
+  final String latitude;
+  final String longitude;
+  final int coverage;
 
-  Branch({required this.name});
+  Branch({
+    required this.name,
+    required this.latitude,
+    required this.longitude,
+    required this.coverage,
+  });
 
   factory Branch.fromJson(Map<String, dynamic> json) => _$BranchFromJson(json);
 

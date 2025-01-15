@@ -47,12 +47,12 @@ class _HomeApiService implements HomeApiService {
   }
 
   @override
-  Future<MandopHomeDetailsResponseModel> getMandopHomeDetailsData() async {
+  Future<MandopDataRM> getMandopHomeDetailsData() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<MandopHomeDetailsResponseModel>(
+    final _options = _setStreamType<MandopDataRM>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -63,9 +63,9 @@ class _HomeApiService implements HomeApiService {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late MandopHomeDetailsResponseModel _value;
+    late MandopDataRM _value;
     try {
-      _value = MandopHomeDetailsResponseModel.fromJson(_result.data!);
+      _value = MandopDataRM.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

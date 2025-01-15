@@ -8,10 +8,9 @@ part 'home_mandop_details_state.freezed.dart';
 class HomeManopDetailsState with _$HomeManopDetailsState {
   const factory HomeManopDetailsState.initial() = _Initial;
   const factory HomeManopDetailsState.homeMandopDetailsLoading() =
-      _HomeMandopDetailsLoading;
+      HomeMandopDetailsLoading;
   const factory HomeManopDetailsState.homeMandopDetailsSuccess(
-          MandopHomeDetailsResponseModel mandopHomeDetailsResponseModel) =
-      _HomeMandopDetailsSuccess;
+      MandopDataRM mandopHomeDetailsResponseModel) = HomeMandopDetailsSuccess;
   const factory HomeManopDetailsState.homeMandopDetailsError(
-      ErrorHandler errorHandler) = _HomeMandopDetailsError;
+      ErrorHandler errorHandler) = HomeMandopDetailsError;
 }

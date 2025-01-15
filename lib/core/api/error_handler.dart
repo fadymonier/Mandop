@@ -1,11 +1,10 @@
-// ignore_for_file: unreachable_switch_case
+// ignore_for_file: unreachable_switch_case, non_constant_identifier_names, constant_identifier_names
 
 import 'package:dio/dio.dart';
 import 'package:mandoob/core/api/api_constnats.dart';
 
 import 'api_error_model.dart';
 
-// TODO: wallahy I will refactor this .. Omar Ahmed
 enum DataSource {
   NO_CONTENT,
   BAD_REQUEST,
@@ -19,21 +18,18 @@ enum DataSource {
   SEND_TIMEOUT,
   CACHE_ERROR,
   NO_INTERNET_CONNECTION,
-  // API_LOGIC_ERROR,
   DEFAULT
 }
 
 class ResponseCode {
-  static const int SUCCESS = 200; // success with data
-  static const int NO_CONTENT = 201; // success with no data (no content)
-  static const int BAD_REQUEST = 400; // failure, API rejected request
-  static const int UNAUTORISED = 401; // failure, user is not authorised
-  static const int FORBIDDEN = 403; //  failure, API rejected request
-  static const int INTERNAL_SERVER_ERROR = 500; // failure, crash in server side
-  static const int NOT_FOUND = 404; // failure, not found
-  static const int API_LOGIC_ERROR = 422; // API , lOGIC ERROR
+  static const int SUCCESS = 200;
+  static const int NO_CONTENT = 201;
+  static const int BAD_REQUEST = 400;
+  static const int UNAUTORISED = 401;
+  static const int FORBIDDEN = 403;
+  static const int INTERNAL_SERVER_ERROR = 500;
+  static const int NOT_FOUND = 404;
 
-  // local status code
   static const int CONNECT_TIMEOUT = -1;
   static const int CANCEL = -2;
   static const int RECIEVE_TIMEOUT = -3;
@@ -44,20 +40,13 @@ class ResponseCode {
 }
 
 class ResponseMessage {
-  static const String NO_CONTENT =
-      ApiErrors.noContent; // success with no data (no content)
-  static const String BAD_REQUEST =
-      ApiErrors.badRequestError; // failure, API rejected request
-  static const String UNAUTORISED =
-      ApiErrors.unauthorizedError; // failure, user is not authorised
-  static const String FORBIDDEN =
-      ApiErrors.forbiddenError; //  failure, API rejected request
-  static const String INTERNAL_SERVER_ERROR =
-      ApiErrors.internalServerError; // failure, crash in server side
-  static const String NOT_FOUND =
-      ApiErrors.notFoundError; // failure, crash in server side
+  static const String NO_CONTENT = ApiErrors.noContent;
+  static const String BAD_REQUEST = ApiErrors.badRequestError;
+  static const String UNAUTORISED = ApiErrors.unauthorizedError;
+  static const String FORBIDDEN = ApiErrors.forbiddenError;
+  static const String INTERNAL_SERVER_ERROR = ApiErrors.internalServerError;
+  static const String NOT_FOUND = ApiErrors.notFoundError;
 
-  // local status code
   static String CONNECT_TIMEOUT = ApiErrors.timeoutError;
   static String CANCEL = ApiErrors.defaultError;
   static String RECIEVE_TIMEOUT = ApiErrors.timeoutError;
@@ -126,12 +115,14 @@ class ErrorHandler implements Exception {
 
   ErrorHandler.handle(dynamic error) {
     if (error is DioException) {
-      // dio error so its an error from response of the API or from dio itself
       apiErrorModel = _handleError(error);
     } else {
-      // default error
       apiErrorModel = DataSource.DEFAULT.getFailure();
     }
+  }
+
+  String? getErrorMessage() {
+    return apiErrorModel.message;
   }
 }
 
@@ -144,33 +135,16 @@ ApiErrorModel _handleError(DioException error) {
     case DioExceptionType.receiveTimeout:
       return DataSource.RECIEVE_TIMEOUT.getFailure();
     case DioExceptionType.badResponse:
-      if (error.response != null &&
-          error.response?.statusCode != null &&
-          error.response?.statusMessage != null) {
+      if (error.response?.data != null) {
         return ApiErrorModel.fromJson(error.response!.data);
-      } else {
-        return DataSource.DEFAULT.getFailure();
       }
-    case DioExceptionType.unknown:
-      if (error.response != null &&
-          error.response?.statusCode != null &&
-          error.response?.statusMessage != null) {
-        return ApiErrorModel.fromJson(error.response!.data);
-      } else {
-        return DataSource.DEFAULT.getFailure();
-      }
+      return DataSource.DEFAULT.getFailure();
     case DioExceptionType.cancel:
       return DataSource.CANCEL.getFailure();
     case DioExceptionType.connectionError:
+    case DioExceptionType.unknown:
       return DataSource.DEFAULT.getFailure();
-    case DioExceptionType.badCertificate:
-      return DataSource.DEFAULT.getFailure();
-    case DioExceptionType.badResponse:
+    default:
       return DataSource.DEFAULT.getFailure();
   }
-}
-
-class ApiInternalStatus {
-  static const int SUCCESS = 0;
-  static const int FAILURE = 1;
 }

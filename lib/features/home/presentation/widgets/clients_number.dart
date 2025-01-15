@@ -18,7 +18,6 @@ class ClientsNumberWidget extends StatelessWidget {
           current is HomeError,
       builder: (context, state) {
         // Debugging: Print the state for troubleshooting
-        print("ClientsNumberWidget State: $state");
 
         return state.maybeWhen(
           homeLoading: () {
@@ -37,7 +36,6 @@ class ClientsNumberWidget extends StatelessWidget {
                 homeResponseModel.data?.customersCounts ?? 0;
 
             // Debugging: Check if customersCounts is valid
-            print("Customers Count: $customersCounts");
 
             return Row(
               children: [
