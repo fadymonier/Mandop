@@ -18,7 +18,7 @@ abstract class AppColors {
   static Color profileAvatarBGColor = const Color(0xFF52806A);
   static Color historyTitleColor = const Color(0xFF044F7F);
 
-  static Color whtieColor = Colors.white;
+  static Color whiteColor = Colors.white;
   static Color blackColor = Colors.black;
   static Color errorColor = Colors.red;
 }

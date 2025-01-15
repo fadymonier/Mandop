@@ -18,7 +18,7 @@ class HistoryAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.whtieColor,
+      backgroundColor: AppColors.whiteColor,
       actions: [
         GestureDetector(
             onTap: () {

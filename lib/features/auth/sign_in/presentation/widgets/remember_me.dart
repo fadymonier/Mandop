@@ -42,7 +42,7 @@ class _RememberMeCheckboxState extends State<RememberMeCheckbox> {
             if (states.contains(MaterialState.selected)) {
               return AppColors.buttonColor;
             }
-            return AppColors.whtieColor;
+            return AppColors.whiteColor;
           }),
           shape: RoundedRectangleBorder(
             side: BorderSide(color: AppColors.buttonColor, width: 1.w),

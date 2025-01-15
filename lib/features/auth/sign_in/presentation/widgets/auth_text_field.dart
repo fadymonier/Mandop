@@ -87,6 +87,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
 OutlineInputBorder getBorderStyle() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(8.r),
-    borderSide: BorderSide(color: AppColors.whtieColor),
+    borderSide: BorderSide(color: AppColors.whiteColor),
   );
 }

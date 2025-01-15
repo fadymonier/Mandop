@@ -18,7 +18,7 @@ class MandopDetailsModel extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: 80.h,
-        color: AppColors.whtieColor,
+        color: AppColors.whiteColor,
         child: Padding(
           padding: EdgeInsets.all(16.0.r),
           child: Column(
