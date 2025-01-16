@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -41,18 +43,14 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   Future<void> logout(BuildContext context) async {
-    Future<void> logout(BuildContext context) async {
-      await SharedPrefHelper.clearAllSecuredData();
-      await SharedPrefHelper.removeData(SharedPrefKeys.userToken);
+    await SharedPrefHelper.clearAllSecuredData();
+    await SharedPrefHelper.removeData(SharedPrefKeys.userToken);
 
-      // إزالة التوكن من هيدر Dio
-      DioFactory.removeTokenFromHeader();
+    DioFactory.removeTokenFromHeader();
 
-      // إعادة الحالة إلى البداية (تسجيل الخروج)
-      emit(const LoginState.initial());
+    emit(const LoginState.initial());
 
-      // يمكنك إضافة إعادة التوجيه إلى صفحة تسجيل الدخول هنا
-      GoRouter.of(context).go('/SignIn');
-    }
+    // ignore: use_build_context_synchronously
+    GoRouter.of(context).go('/SignIn');
   }
 }

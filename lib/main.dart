@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mandoob/core/cache/cache_helper.dart';
 import 'package:mandoob/core/cache/cache_keys.dart';
 import 'package:mandoob/core/extensions/navigate.dart';
-import 'package:mandoob/core/routes/app_router.dart'; // Make sure the router is correctly imported
+import 'package:mandoob/core/routes/app_router.dart';
 import 'package:mandoob/core/services/dependency_injection.dart';
 
 void main() async {

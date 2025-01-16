@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:dio/dio.dart';
 import 'package:mandoob/core/api/api_constnats.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -35,7 +37,6 @@ class DioFactory {
     print("Token has been removed from Dio headers");
   }
 
-  /// Add Dio interceptors for logging and debugging
   static void addDioInterceptor() {
     _dio?.interceptors.add(
       PrettyDioLogger(

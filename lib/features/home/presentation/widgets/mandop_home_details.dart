@@ -27,7 +27,7 @@ class MandopHomeDetails extends StatelessWidget {
             homeMandopDetailsSuccess: (response) {
               final mandopData = response;
 
-              if (mandopData.firstName.isEmpty) {
+              if (mandopData.data.user.fName.isEmpty) {
                 return Center(
                   child: Text(
                     'البيانات غير متوفرة',
@@ -55,7 +55,7 @@ class MandopHomeDetails extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            "${mandopData.firstName} ${mandopData.lastName}",
+                            "${mandopData..data.user.fName} ${mandopData.data.user.lName}",
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 fontSize: 16.sp, fontWeight: FontWeight.bold),
@@ -72,7 +72,7 @@ class MandopHomeDetails extends StatelessWidget {
                       SizedBox(width: 20.w),
                       ClipOval(
                         child: Image.network(
-                          mandopData.profileImage,
+                          mandopData.data.user.profileImage,
                           width: 50.w,
                           height: 50.h,
                           fit: BoxFit.cover,
