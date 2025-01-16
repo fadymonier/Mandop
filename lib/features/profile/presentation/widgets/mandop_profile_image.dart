@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
+import 'package:mandoob/features/home/data/models/mandop_home_details_response_model.dart';
 
 class MandopProfileImage extends StatelessWidget {
+  final UserDetailsRM userData;
+  final String userImage;
   const MandopProfileImage({
     super.key,
+    required this.userData,
+    required this.userImage,
   });
 
   @override
@@ -25,9 +30,9 @@ class MandopProfileImage extends StatelessWidget {
           SizedBox(
             width: 110.w,
             height: 110.h,
-            child: const CircleAvatar(
-              backgroundImage: AssetImage(
-                "assets/images/profileImage.png",
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(
+                userData.profileImage,
               ),
             ),
           ),

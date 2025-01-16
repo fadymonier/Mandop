@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mandoob/features/history/models/date_model.dart';
+import 'package:mandoob/features/history/presentation/models/date_model.dart';
 import 'package:mandoob/features/navbar/history_navbar.dart';
 
 class DatesBody extends StatelessWidget {

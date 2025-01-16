@@ -20,8 +20,7 @@ mixin _$HomeManopDetailsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() homeMandopDetailsLoading,
-    required TResult Function(MandopDataRM mandopHomeDetailsResponseModel)
-        homeMandopDetailsSuccess,
+    required TResult Function(UserDetailsRM user) homeMandopDetailsSuccess,
     required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,8 +28,7 @@ mixin _$HomeManopDetailsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? homeMandopDetailsLoading,
-    TResult? Function(MandopDataRM mandopHomeDetailsResponseModel)?
-        homeMandopDetailsSuccess,
+    TResult? Function(UserDetailsRM user)? homeMandopDetailsSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) =>
       throw _privateConstructorUsedError;
@@ -38,8 +36,7 @@ mixin _$HomeManopDetailsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? homeMandopDetailsLoading,
-    TResult Function(MandopDataRM mandopHomeDetailsResponseModel)?
-        homeMandopDetailsSuccess,
+    TResult Function(UserDetailsRM user)? homeMandopDetailsSuccess,
     TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
   }) =>
@@ -139,8 +136,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() homeMandopDetailsLoading,
-    required TResult Function(MandopDataRM mandopHomeDetailsResponseModel)
-        homeMandopDetailsSuccess,
+    required TResult Function(UserDetailsRM user) homeMandopDetailsSuccess,
     required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
     return initial();
@@ -151,8 +147,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? homeMandopDetailsLoading,
-    TResult? Function(MandopDataRM mandopHomeDetailsResponseModel)?
-        homeMandopDetailsSuccess,
+    TResult? Function(UserDetailsRM user)? homeMandopDetailsSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
     return initial?.call();
@@ -163,8 +158,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? homeMandopDetailsLoading,
-    TResult Function(MandopDataRM mandopHomeDetailsResponseModel)?
-        homeMandopDetailsSuccess,
+    TResult Function(UserDetailsRM user)? homeMandopDetailsSuccess,
     TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
@@ -266,8 +260,7 @@ class _$HomeMandopDetailsLoadingImpl implements HomeMandopDetailsLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() homeMandopDetailsLoading,
-    required TResult Function(MandopDataRM mandopHomeDetailsResponseModel)
-        homeMandopDetailsSuccess,
+    required TResult Function(UserDetailsRM user) homeMandopDetailsSuccess,
     required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
     return homeMandopDetailsLoading();
@@ -278,8 +271,7 @@ class _$HomeMandopDetailsLoadingImpl implements HomeMandopDetailsLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? homeMandopDetailsLoading,
-    TResult? Function(MandopDataRM mandopHomeDetailsResponseModel)?
-        homeMandopDetailsSuccess,
+    TResult? Function(UserDetailsRM user)? homeMandopDetailsSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
     return homeMandopDetailsLoading?.call();
@@ -290,8 +282,7 @@ class _$HomeMandopDetailsLoadingImpl implements HomeMandopDetailsLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? homeMandopDetailsLoading,
-    TResult Function(MandopDataRM mandopHomeDetailsResponseModel)?
-        homeMandopDetailsSuccess,
+    TResult Function(UserDetailsRM user)? homeMandopDetailsSuccess,
     TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
@@ -353,7 +344,7 @@ abstract class _$$HomeMandopDetailsSuccessImplCopyWith<$Res> {
           $Res Function(_$HomeMandopDetailsSuccessImpl) then) =
       __$$HomeMandopDetailsSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({MandopDataRM mandopHomeDetailsResponseModel});
+  $Res call({UserDetailsRM user});
 }
 
 /// @nodoc
@@ -371,13 +362,13 @@ class __$$HomeMandopDetailsSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mandopHomeDetailsResponseModel = null,
+    Object? user = null,
   }) {
     return _then(_$HomeMandopDetailsSuccessImpl(
-      null == mandopHomeDetailsResponseModel
-          ? _value.mandopHomeDetailsResponseModel
-          : mandopHomeDetailsResponseModel // ignore: cast_nullable_to_non_nullable
-              as MandopDataRM,
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserDetailsRM,
     ));
   }
 }
@@ -385,14 +376,14 @@ class __$$HomeMandopDetailsSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeMandopDetailsSuccessImpl implements HomeMandopDetailsSuccess {
-  const _$HomeMandopDetailsSuccessImpl(this.mandopHomeDetailsResponseModel);
+  const _$HomeMandopDetailsSuccessImpl(this.user);
 
   @override
-  final MandopDataRM mandopHomeDetailsResponseModel;
+  final UserDetailsRM user;
 
   @override
   String toString() {
-    return 'HomeManopDetailsState.homeMandopDetailsSuccess(mandopHomeDetailsResponseModel: $mandopHomeDetailsResponseModel)';
+    return 'HomeManopDetailsState.homeMandopDetailsSuccess(user: $user)';
   }
 
   @override
@@ -400,14 +391,11 @@ class _$HomeMandopDetailsSuccessImpl implements HomeMandopDetailsSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeMandopDetailsSuccessImpl &&
-            (identical(other.mandopHomeDetailsResponseModel,
-                    mandopHomeDetailsResponseModel) ||
-                other.mandopHomeDetailsResponseModel ==
-                    mandopHomeDetailsResponseModel));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, mandopHomeDetailsResponseModel);
+  int get hashCode => Object.hash(runtimeType, user);
 
   /// Create a copy of HomeManopDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -423,11 +411,10 @@ class _$HomeMandopDetailsSuccessImpl implements HomeMandopDetailsSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() homeMandopDetailsLoading,
-    required TResult Function(MandopDataRM mandopHomeDetailsResponseModel)
-        homeMandopDetailsSuccess,
+    required TResult Function(UserDetailsRM user) homeMandopDetailsSuccess,
     required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
-    return homeMandopDetailsSuccess(mandopHomeDetailsResponseModel);
+    return homeMandopDetailsSuccess(user);
   }
 
   @override
@@ -435,11 +422,10 @@ class _$HomeMandopDetailsSuccessImpl implements HomeMandopDetailsSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? homeMandopDetailsLoading,
-    TResult? Function(MandopDataRM mandopHomeDetailsResponseModel)?
-        homeMandopDetailsSuccess,
+    TResult? Function(UserDetailsRM user)? homeMandopDetailsSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
-    return homeMandopDetailsSuccess?.call(mandopHomeDetailsResponseModel);
+    return homeMandopDetailsSuccess?.call(user);
   }
 
   @override
@@ -447,13 +433,12 @@ class _$HomeMandopDetailsSuccessImpl implements HomeMandopDetailsSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? homeMandopDetailsLoading,
-    TResult Function(MandopDataRM mandopHomeDetailsResponseModel)?
-        homeMandopDetailsSuccess,
+    TResult Function(UserDetailsRM user)? homeMandopDetailsSuccess,
     TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (homeMandopDetailsSuccess != null) {
-      return homeMandopDetailsSuccess(mandopHomeDetailsResponseModel);
+      return homeMandopDetailsSuccess(user);
     }
     return orElse();
   }
@@ -500,11 +485,10 @@ class _$HomeMandopDetailsSuccessImpl implements HomeMandopDetailsSuccess {
 }
 
 abstract class HomeMandopDetailsSuccess implements HomeManopDetailsState {
-  const factory HomeMandopDetailsSuccess(
-          final MandopDataRM mandopHomeDetailsResponseModel) =
+  const factory HomeMandopDetailsSuccess(final UserDetailsRM user) =
       _$HomeMandopDetailsSuccessImpl;
 
-  MandopDataRM get mandopHomeDetailsResponseModel;
+  UserDetailsRM get user;
 
   /// Create a copy of HomeManopDetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -588,8 +572,7 @@ class _$HomeMandopDetailsErrorImpl implements HomeMandopDetailsError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() homeMandopDetailsLoading,
-    required TResult Function(MandopDataRM mandopHomeDetailsResponseModel)
-        homeMandopDetailsSuccess,
+    required TResult Function(UserDetailsRM user) homeMandopDetailsSuccess,
     required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
     return homeMandopDetailsError(errorHandler);
@@ -600,8 +583,7 @@ class _$HomeMandopDetailsErrorImpl implements HomeMandopDetailsError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? homeMandopDetailsLoading,
-    TResult? Function(MandopDataRM mandopHomeDetailsResponseModel)?
-        homeMandopDetailsSuccess,
+    TResult? Function(UserDetailsRM user)? homeMandopDetailsSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
     return homeMandopDetailsError?.call(errorHandler);
@@ -612,8 +594,7 @@ class _$HomeMandopDetailsErrorImpl implements HomeMandopDetailsError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? homeMandopDetailsLoading,
-    TResult Function(MandopDataRM mandopHomeDetailsResponseModel)?
-        homeMandopDetailsSuccess,
+    TResult Function(UserDetailsRM user)? homeMandopDetailsSuccess,
     TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
   }) {

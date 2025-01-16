@@ -3,50 +3,30 @@ import 'package:json_annotation/json_annotation.dart';
 part 'mandop_home_details_response_model.g.dart';
 
 @JsonSerializable()
-class MandopDataRM {
-  final int status;
-  final String message;
-  final MandopData data;
-
-  MandopDataRM({
-    required this.status,
-    required this.message,
-    required this.data,
-  });
-
-  factory MandopDataRM.fromJson(Map<String, dynamic> json) =>
-      _$MandopDataRMFromJson(json);
-  Map<String, dynamic> toJson() => _$MandopDataRMToJson(this);
-}
-
-@JsonSerializable()
-class MandopData {
-  final User user;
-  final Branch branch;
-
-  MandopData({
-    required this.user,
-    required this.branch,
-  });
-
-  factory MandopData.fromJson(Map<String, dynamic> json) =>
-      _$MandopDataFromJson(json);
-  Map<String, dynamic> toJson() => _$MandopDataToJson(this);
-}
-
-@JsonSerializable()
-class User {
+class UserDetailsRM {
   final int id;
+
+  @JsonKey(name: 'f_name')
   final String fName;
+
+  @JsonKey(name: 'l_name')
   final String lName;
+
   final String email;
   final String phoneNumber;
+
+  @JsonKey(name: 'profile_image')
   final String profileImage;
+
+  @JsonKey(name: 'identity_image')
   final List<String> identityImage;
+
+  @JsonKey(name: 'created_at')
   final String createdAt;
+
   final int isActive;
 
-  User({
+  UserDetailsRM({
     required this.id,
     required this.fName,
     required this.lName,
@@ -58,26 +38,7 @@ class User {
     required this.isActive,
   });
 
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
-  Map<String, dynamic> toJson() => _$UserToJson(this);
-}
-
-@JsonSerializable()
-class Branch {
-  final int id;
-  final String name;
-  final String latitude;
-  final String longitude;
-  final int coverage;
-
-  Branch({
-    required this.id,
-    required this.name,
-    required this.latitude,
-    required this.longitude,
-    required this.coverage,
-  });
-
-  factory Branch.fromJson(Map<String, dynamic> json) => _$BranchFromJson(json);
-  Map<String, dynamic> toJson() => _$BranchToJson(this);
+  factory UserDetailsRM.fromJson(Map<String, dynamic> json) =>
+      _$UserDetailsRMFromJson(json);
+  Map<String, dynamic> toJson() => _$UserDetailsRMToJson(this);
 }

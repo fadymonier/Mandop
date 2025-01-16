@@ -10,7 +10,7 @@ class HomeManopDetailsState with _$HomeManopDetailsState {
   const factory HomeManopDetailsState.homeMandopDetailsLoading() =
       HomeMandopDetailsLoading;
   const factory HomeManopDetailsState.homeMandopDetailsSuccess(
-      MandopDataRM mandopHomeDetailsResponseModel) = HomeMandopDetailsSuccess;
+      UserDetailsRM user) = HomeMandopDetailsSuccess;
   const factory HomeManopDetailsState.homeMandopDetailsError(
       ErrorHandler errorHandler) = HomeMandopDetailsError;
 }

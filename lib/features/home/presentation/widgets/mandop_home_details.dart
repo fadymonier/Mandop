@@ -11,12 +11,12 @@ class MandopHomeDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<HomeManopDetailsCubit>(
+    return BlocProvider<HomeMandopDetailsCubit>(
       create: (context) =>
-          HomeManopDetailsCubit(getit())..getMandopDetailsHomeData(),
-      child: BlocBuilder<HomeManopDetailsCubit, HomeManopDetailsState>(
+          HomeMandopDetailsCubit(getit())..getMandopDetailsHomeData(),
+      child: BlocBuilder<HomeMandopDetailsCubit, HomeManopDetailsState>(
         builder: (context, state) {
-          return state.maybeWhen(
+          return state.when(
             homeMandopDetailsLoading: () {
               return Center(
                 child: CircularProgressIndicator(
@@ -27,7 +27,7 @@ class MandopHomeDetails extends StatelessWidget {
             homeMandopDetailsSuccess: (response) {
               final mandopData = response;
 
-              if (mandopData.data.user.fName.isEmpty) {
+              if (mandopData.profileImage.isEmpty) {
                 return Center(
                   child: Text(
                     'البيانات غير متوفرة',
@@ -50,29 +50,30 @@ class MandopHomeDetails extends StatelessWidget {
                         width: 50.w,
                         height: 50.h,
                       ),
-                      const Spacer(),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            "${mandopData..data.user.fName} ${mandopData.data.user.lName}",
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                fontSize: 16.sp, fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 5.h),
-                          Text(
-                            "مندوب مبيعات",
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                fontSize: 16.sp, fontWeight: FontWeight.w300),
-                          ),
-                        ],
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              "${mandopData.fName} ${mandopData.lName}",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  fontSize: 16.sp, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 5.h),
+                            Text(
+                              "مندوب مبيعات",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  fontSize: 16.sp, fontWeight: FontWeight.w300),
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(width: 20.w),
                       ClipOval(
                         child: Image.network(
-                          mandopData.data.user.profileImage,
+                          mandopData.profileImage,
                           width: 50.w,
                           height: 50.h,
                           fit: BoxFit.cover,
@@ -81,15 +82,16 @@ class MandopHomeDetails extends StatelessWidget {
                             return Center(
                               child: CircularProgressIndicator(
                                 color: AppColors.buttonColor,
-                                strokeWidth: 2.0,
+                                strokeWidth: 1.5,
                               ),
                             );
                           },
                           errorBuilder: (context, error, stackTrace) {
-                            return Icon(
-                              Icons.error,
-                              color: Colors.red,
-                              size: 50.h,
+                            return Image.asset(
+                              "assets/images/placeholder.png",
+                              width: 50.w,
+                              height: 50.h,
+                              fit: BoxFit.cover,
                             );
                           },
                         ),
@@ -102,12 +104,14 @@ class MandopHomeDetails extends StatelessWidget {
             homeMandopDetailsError: (errorMessage) {
               return Center(
                 child: Text(
-                  'Failed to load data',
+                  'Failed to load data: $errorMessage',
                   style: TextStyle(color: Colors.red, fontSize: 16.sp),
                 ),
               );
             },
-            orElse: () => const SizedBox.shrink(),
+            initial: () {
+              return const SizedBox.shrink();
+            },
           );
         },
       ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mandoob/features/history/models/history_body_model.dart';
-import 'package:mandoob/features/history/widgets/mandop_history_profile_image.dart';
+import 'package:mandoob/features/history/presentation/models/history_body_model.dart';
+import 'package:mandoob/features/history/presentation/widgets/mandop_history_profile_image.dart';
 import 'package:mandoob/features/navbar/history_navbar.dart';
 
 class HistoryBody extends StatelessWidget {

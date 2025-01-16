@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
-import 'package:mandoob/features/history/widgets/history_app_bar.dart';
-import 'package:mandoob/features/history/widgets/history_body.dart';
+import 'package:mandoob/features/history/presentation/widgets/history_app_bar.dart';
+import 'package:mandoob/features/history/presentation/widgets/history_body.dart';
 
 class HistoryScreenView extends StatelessWidget {
   const HistoryScreenView({super.key});
