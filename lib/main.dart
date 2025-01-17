@@ -1,12 +1,10 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mandoob/core/cache/cache_helper.dart';
 import 'package:mandoob/core/cache/cache_keys.dart';
 import 'package:mandoob/core/extensions/navigate.dart';
-import 'package:mandoob/core/routes/app_router.dart';
 import 'package:mandoob/core/services/dependency_injection.dart';
+import 'package:mandoob/core/routes/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,11 +27,12 @@ class MandoobApp extends StatelessWidget {
       designSize: const Size(390, 844),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) => MaterialApp.router(
+      builder: (context, child) => const MaterialApp(
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.system,
-        // theme: Provider.of<ThemeProvider>(context).themeData,
-        routerConfig: router,
+        // initial route
+        initialRoute: AppRouter.splash,
+        onGenerateRoute: AppRouter.generateRoute,
       ),
     );
   }
