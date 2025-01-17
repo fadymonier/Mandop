@@ -1,9 +1,15 @@
-import 'package:go_router/go_router.dart';
+import 'package:flutter/material.dart';
 
-void customNavigate(context, String path, {Object? extra}) {
-  GoRouter.of(context).push(path, extra: extra);
-}
+extension NavigationExtensions on BuildContext {
+  void navigateToReplacement(String routeName) {
+    Navigator.pushReplacementNamed(this, routeName);
+  }
 
-void customReplacementNavigate(context, String path) {
-  GoRouter.of(context).pushReplacement(path);
+  void navigateTo(String routeName) {
+    Navigator.pushNamed(this, routeName);
+  }
+
+  void navigateBack() {
+    Navigator.pop(this);
+  }
 }

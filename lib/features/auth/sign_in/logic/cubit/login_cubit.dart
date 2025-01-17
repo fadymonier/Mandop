@@ -2,7 +2,6 @@
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:mandoob/features/auth/sign_in/data/models/login_request_body.dart';
 import 'package:mandoob/features/auth/sign_in/data/repos/login_repo.dart';
 import 'package:mandoob/features/auth/sign_in/logic/cubit/login_state.dart';
@@ -51,6 +50,6 @@ class LoginCubit extends Cubit<LoginState> {
     emit(const LoginState.initial());
 
     // ignore: use_build_context_synchronously
-    GoRouter.of(context).go('/SignIn');
+    Navigator.pushReplacementNamed(context, '/SignIn');
   }
 }

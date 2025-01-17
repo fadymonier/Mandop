@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mandoob/core/functions/navigation.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
 
 class SplashView extends StatefulWidget {
@@ -38,11 +37,12 @@ class _SplashViewState extends State<SplashView> {
   }
 }
 
-void delayedNavigate(context, path) {
+void delayedNavigate(BuildContext context, String path) {
   Future.delayed(
     const Duration(seconds: 2),
     () {
-      customReplacementNavigate(context, path);
+      // ignore: use_build_context_synchronously
+      Navigator.pushReplacementNamed(context, path);
     },
   );
 }

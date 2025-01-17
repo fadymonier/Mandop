@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 class ProfileNavbar extends StatelessWidget {
   const ProfileNavbar({super.key});
@@ -16,14 +15,14 @@ class ProfileNavbar extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                GoRouter.of(context).go('/Profile');
+                Navigator.pushNamed(context, '/Profile');
               },
               child: Image.asset("assets/images/profileNavbarSelected.png",
                   width: 190.w),
             ),
             GestureDetector(
                 onTap: () {
-                  GoRouter.of(context).go('/Home');
+                  Navigator.pushNamed(context, '/Home');
                 },
                 child: Image.asset("assets/images/homeNavbarUnselected.png",
                     width: 190.w)),
@@ -33,7 +32,7 @@ class ProfileNavbar extends StatelessWidget {
           top: -35.h,
           child: GestureDetector(
               onTap: () {
-                GoRouter.of(context).go('/History');
+                Navigator.pushNamed(context, '/History');
               },
               child: Image.asset("assets/images/historyUnselected.png",
                   width: 70.w)),

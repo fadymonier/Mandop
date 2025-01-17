@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mandoob/core/functions/navigation.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
 import 'package:mandoob/features/onboarding/models/onboarding_model.dart';
 
@@ -25,7 +24,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       );
     } else {
       // Replace current screen with SignInView using GoRouter
-      customReplacementNavigate(context, "/SignIn");
+      Navigator.pushReplacementNamed(context, "/SignIn");
     }
   }
 

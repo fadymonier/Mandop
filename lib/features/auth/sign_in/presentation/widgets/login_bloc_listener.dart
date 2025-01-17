@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
 import 'package:mandoob/features/auth/sign_in/logic/cubit/login_cubit.dart';
@@ -27,8 +26,8 @@ class LoginBlocListener extends StatelessWidget {
             );
           },
           success: (loginResponse) {
-            context.pop(); // Pop the loading dialog
-            GoRouter.of(context).go("/Home"); // Navigate to home screen
+            Navigator.pop(context);
+            Navigator.pushReplacementNamed(context, "/Home");
           },
           error: (error) {
             setupErrorState(context, error);
@@ -40,7 +39,7 @@ class LoginBlocListener extends StatelessWidget {
   }
 
   void setupErrorState(BuildContext context, String error) {
-    context.pop(); // Close any open dialogs
+    Navigator.pop(context); // Close any open dialogs
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -59,7 +58,7 @@ class LoginBlocListener extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-              context.pop(); // Close dialog on 'Got it' click
+              Navigator.pop(context); // Close dialog on 'Got it' click
             },
             child: Text(
               'Got it',
