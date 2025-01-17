@@ -22,6 +22,10 @@ mixin _$HomeState {
     required TResult Function() homeLoading,
     required TResult Function(HomeResponseModel homeResponseModel) homeSuccess,
     required TResult Function(ErrorHandler errorHandler) homeError,
+    required TResult Function() homeMandopDetailsLoading,
+    required TResult Function(UserDetailsRM userDetailsRm)
+        homeMandopDetailsSuccess,
+    required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +34,9 @@ mixin _$HomeState {
     TResult? Function()? homeLoading,
     TResult? Function(HomeResponseModel homeResponseModel)? homeSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeError,
+    TResult? Function()? homeMandopDetailsLoading,
+    TResult? Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +45,9 @@ mixin _$HomeState {
     TResult Function()? homeLoading,
     TResult Function(HomeResponseModel homeResponseModel)? homeSuccess,
     TResult Function(ErrorHandler errorHandler)? homeError,
+    TResult Function()? homeMandopDetailsLoading,
+    TResult Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +57,12 @@ mixin _$HomeState {
     required TResult Function(HomeLoading value) homeLoading,
     required TResult Function(HomeSuccess value) homeSuccess,
     required TResult Function(HomeError value) homeError,
+    required TResult Function(HomeMandopDetailsLoading value)
+        homeMandopDetailsLoading,
+    required TResult Function(HomeMandopDetailsSuccess value)
+        homeMandopDetailsSuccess,
+    required TResult Function(HomeMandopDetailsError value)
+        homeMandopDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +71,9 @@ mixin _$HomeState {
     TResult? Function(HomeLoading value)? homeLoading,
     TResult? Function(HomeSuccess value)? homeSuccess,
     TResult? Function(HomeError value)? homeError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +82,9 @@ mixin _$HomeState {
     TResult Function(HomeLoading value)? homeLoading,
     TResult Function(HomeSuccess value)? homeSuccess,
     TResult Function(HomeError value)? homeError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,6 +155,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function() homeLoading,
     required TResult Function(HomeResponseModel homeResponseModel) homeSuccess,
     required TResult Function(ErrorHandler errorHandler) homeError,
+    required TResult Function() homeMandopDetailsLoading,
+    required TResult Function(UserDetailsRM userDetailsRm)
+        homeMandopDetailsSuccess,
+    required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
     return initial();
   }
@@ -144,6 +170,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? homeLoading,
     TResult? Function(HomeResponseModel homeResponseModel)? homeSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeError,
+    TResult? Function()? homeMandopDetailsLoading,
+    TResult? Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
     return initial?.call();
   }
@@ -155,6 +184,9 @@ class _$InitialImpl implements _Initial {
     TResult Function()? homeLoading,
     TResult Function(HomeResponseModel homeResponseModel)? homeSuccess,
     TResult Function(ErrorHandler errorHandler)? homeError,
+    TResult Function()? homeMandopDetailsLoading,
+    TResult Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -170,6 +202,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(HomeLoading value) homeLoading,
     required TResult Function(HomeSuccess value) homeSuccess,
     required TResult Function(HomeError value) homeError,
+    required TResult Function(HomeMandopDetailsLoading value)
+        homeMandopDetailsLoading,
+    required TResult Function(HomeMandopDetailsSuccess value)
+        homeMandopDetailsSuccess,
+    required TResult Function(HomeMandopDetailsError value)
+        homeMandopDetailsError,
   }) {
     return initial(this);
   }
@@ -181,6 +219,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(HomeLoading value)? homeLoading,
     TResult? Function(HomeSuccess value)? homeSuccess,
     TResult? Function(HomeError value)? homeError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
   }) {
     return initial?.call(this);
   }
@@ -192,6 +233,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(HomeLoading value)? homeLoading,
     TResult Function(HomeSuccess value)? homeSuccess,
     TResult Function(HomeError value)? homeError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -250,6 +294,10 @@ class _$HomeLoadingImpl implements HomeLoading {
     required TResult Function() homeLoading,
     required TResult Function(HomeResponseModel homeResponseModel) homeSuccess,
     required TResult Function(ErrorHandler errorHandler) homeError,
+    required TResult Function() homeMandopDetailsLoading,
+    required TResult Function(UserDetailsRM userDetailsRm)
+        homeMandopDetailsSuccess,
+    required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
     return homeLoading();
   }
@@ -261,6 +309,9 @@ class _$HomeLoadingImpl implements HomeLoading {
     TResult? Function()? homeLoading,
     TResult? Function(HomeResponseModel homeResponseModel)? homeSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeError,
+    TResult? Function()? homeMandopDetailsLoading,
+    TResult? Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
     return homeLoading?.call();
   }
@@ -272,6 +323,9 @@ class _$HomeLoadingImpl implements HomeLoading {
     TResult Function()? homeLoading,
     TResult Function(HomeResponseModel homeResponseModel)? homeSuccess,
     TResult Function(ErrorHandler errorHandler)? homeError,
+    TResult Function()? homeMandopDetailsLoading,
+    TResult Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (homeLoading != null) {
@@ -287,6 +341,12 @@ class _$HomeLoadingImpl implements HomeLoading {
     required TResult Function(HomeLoading value) homeLoading,
     required TResult Function(HomeSuccess value) homeSuccess,
     required TResult Function(HomeError value) homeError,
+    required TResult Function(HomeMandopDetailsLoading value)
+        homeMandopDetailsLoading,
+    required TResult Function(HomeMandopDetailsSuccess value)
+        homeMandopDetailsSuccess,
+    required TResult Function(HomeMandopDetailsError value)
+        homeMandopDetailsError,
   }) {
     return homeLoading(this);
   }
@@ -298,6 +358,9 @@ class _$HomeLoadingImpl implements HomeLoading {
     TResult? Function(HomeLoading value)? homeLoading,
     TResult? Function(HomeSuccess value)? homeSuccess,
     TResult? Function(HomeError value)? homeError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
   }) {
     return homeLoading?.call(this);
   }
@@ -309,6 +372,9 @@ class _$HomeLoadingImpl implements HomeLoading {
     TResult Function(HomeLoading value)? homeLoading,
     TResult Function(HomeSuccess value)? homeSuccess,
     TResult Function(HomeError value)? homeError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (homeLoading != null) {
@@ -395,6 +461,10 @@ class _$HomeSuccessImpl implements HomeSuccess {
     required TResult Function() homeLoading,
     required TResult Function(HomeResponseModel homeResponseModel) homeSuccess,
     required TResult Function(ErrorHandler errorHandler) homeError,
+    required TResult Function() homeMandopDetailsLoading,
+    required TResult Function(UserDetailsRM userDetailsRm)
+        homeMandopDetailsSuccess,
+    required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
     return homeSuccess(homeResponseModel);
   }
@@ -406,6 +476,9 @@ class _$HomeSuccessImpl implements HomeSuccess {
     TResult? Function()? homeLoading,
     TResult? Function(HomeResponseModel homeResponseModel)? homeSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeError,
+    TResult? Function()? homeMandopDetailsLoading,
+    TResult? Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
     return homeSuccess?.call(homeResponseModel);
   }
@@ -417,6 +490,9 @@ class _$HomeSuccessImpl implements HomeSuccess {
     TResult Function()? homeLoading,
     TResult Function(HomeResponseModel homeResponseModel)? homeSuccess,
     TResult Function(ErrorHandler errorHandler)? homeError,
+    TResult Function()? homeMandopDetailsLoading,
+    TResult Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (homeSuccess != null) {
@@ -432,6 +508,12 @@ class _$HomeSuccessImpl implements HomeSuccess {
     required TResult Function(HomeLoading value) homeLoading,
     required TResult Function(HomeSuccess value) homeSuccess,
     required TResult Function(HomeError value) homeError,
+    required TResult Function(HomeMandopDetailsLoading value)
+        homeMandopDetailsLoading,
+    required TResult Function(HomeMandopDetailsSuccess value)
+        homeMandopDetailsSuccess,
+    required TResult Function(HomeMandopDetailsError value)
+        homeMandopDetailsError,
   }) {
     return homeSuccess(this);
   }
@@ -443,6 +525,9 @@ class _$HomeSuccessImpl implements HomeSuccess {
     TResult? Function(HomeLoading value)? homeLoading,
     TResult? Function(HomeSuccess value)? homeSuccess,
     TResult? Function(HomeError value)? homeError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
   }) {
     return homeSuccess?.call(this);
   }
@@ -454,6 +539,9 @@ class _$HomeSuccessImpl implements HomeSuccess {
     TResult Function(HomeLoading value)? homeLoading,
     TResult Function(HomeSuccess value)? homeSuccess,
     TResult Function(HomeError value)? homeError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (homeSuccess != null) {
@@ -549,6 +637,10 @@ class _$HomeErrorImpl implements HomeError {
     required TResult Function() homeLoading,
     required TResult Function(HomeResponseModel homeResponseModel) homeSuccess,
     required TResult Function(ErrorHandler errorHandler) homeError,
+    required TResult Function() homeMandopDetailsLoading,
+    required TResult Function(UserDetailsRM userDetailsRm)
+        homeMandopDetailsSuccess,
+    required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
   }) {
     return homeError(errorHandler);
   }
@@ -560,6 +652,9 @@ class _$HomeErrorImpl implements HomeError {
     TResult? Function()? homeLoading,
     TResult? Function(HomeResponseModel homeResponseModel)? homeSuccess,
     TResult? Function(ErrorHandler errorHandler)? homeError,
+    TResult? Function()? homeMandopDetailsLoading,
+    TResult? Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
   }) {
     return homeError?.call(errorHandler);
   }
@@ -571,6 +666,9 @@ class _$HomeErrorImpl implements HomeError {
     TResult Function()? homeLoading,
     TResult Function(HomeResponseModel homeResponseModel)? homeSuccess,
     TResult Function(ErrorHandler errorHandler)? homeError,
+    TResult Function()? homeMandopDetailsLoading,
+    TResult Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (homeError != null) {
@@ -586,6 +684,12 @@ class _$HomeErrorImpl implements HomeError {
     required TResult Function(HomeLoading value) homeLoading,
     required TResult Function(HomeSuccess value) homeSuccess,
     required TResult Function(HomeError value) homeError,
+    required TResult Function(HomeMandopDetailsLoading value)
+        homeMandopDetailsLoading,
+    required TResult Function(HomeMandopDetailsSuccess value)
+        homeMandopDetailsSuccess,
+    required TResult Function(HomeMandopDetailsError value)
+        homeMandopDetailsError,
   }) {
     return homeError(this);
   }
@@ -597,6 +701,9 @@ class _$HomeErrorImpl implements HomeError {
     TResult? Function(HomeLoading value)? homeLoading,
     TResult? Function(HomeSuccess value)? homeSuccess,
     TResult? Function(HomeError value)? homeError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
   }) {
     return homeError?.call(this);
   }
@@ -608,6 +715,9 @@ class _$HomeErrorImpl implements HomeError {
     TResult Function(HomeLoading value)? homeLoading,
     TResult Function(HomeSuccess value)? homeSuccess,
     TResult Function(HomeError value)? homeError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
     required TResult orElse(),
   }) {
     if (homeError != null) {
@@ -627,4 +737,504 @@ abstract class HomeError implements HomeState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HomeErrorImplCopyWith<_$HomeErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$HomeMandopDetailsLoadingImplCopyWith<$Res> {
+  factory _$$HomeMandopDetailsLoadingImplCopyWith(
+          _$HomeMandopDetailsLoadingImpl value,
+          $Res Function(_$HomeMandopDetailsLoadingImpl) then) =
+      __$$HomeMandopDetailsLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$HomeMandopDetailsLoadingImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$HomeMandopDetailsLoadingImpl>
+    implements _$$HomeMandopDetailsLoadingImplCopyWith<$Res> {
+  __$$HomeMandopDetailsLoadingImplCopyWithImpl(
+      _$HomeMandopDetailsLoadingImpl _value,
+      $Res Function(_$HomeMandopDetailsLoadingImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$HomeMandopDetailsLoadingImpl implements HomeMandopDetailsLoading {
+  const _$HomeMandopDetailsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'HomeState.homeMandopDetailsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HomeMandopDetailsLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() homeLoading,
+    required TResult Function(HomeResponseModel homeResponseModel) homeSuccess,
+    required TResult Function(ErrorHandler errorHandler) homeError,
+    required TResult Function() homeMandopDetailsLoading,
+    required TResult Function(UserDetailsRM userDetailsRm)
+        homeMandopDetailsSuccess,
+    required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? homeLoading,
+    TResult? Function(HomeResponseModel homeResponseModel)? homeSuccess,
+    TResult? Function(ErrorHandler errorHandler)? homeError,
+    TResult? Function()? homeMandopDetailsLoading,
+    TResult? Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? homeLoading,
+    TResult Function(HomeResponseModel homeResponseModel)? homeSuccess,
+    TResult Function(ErrorHandler errorHandler)? homeError,
+    TResult Function()? homeMandopDetailsLoading,
+    TResult Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
+    required TResult orElse(),
+  }) {
+    if (homeMandopDetailsLoading != null) {
+      return homeMandopDetailsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(HomeLoading value) homeLoading,
+    required TResult Function(HomeSuccess value) homeSuccess,
+    required TResult Function(HomeError value) homeError,
+    required TResult Function(HomeMandopDetailsLoading value)
+        homeMandopDetailsLoading,
+    required TResult Function(HomeMandopDetailsSuccess value)
+        homeMandopDetailsSuccess,
+    required TResult Function(HomeMandopDetailsError value)
+        homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(HomeLoading value)? homeLoading,
+    TResult? Function(HomeSuccess value)? homeSuccess,
+    TResult? Function(HomeError value)? homeError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(HomeLoading value)? homeLoading,
+    TResult Function(HomeSuccess value)? homeSuccess,
+    TResult Function(HomeError value)? homeError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
+    required TResult orElse(),
+  }) {
+    if (homeMandopDetailsLoading != null) {
+      return homeMandopDetailsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HomeMandopDetailsLoading implements HomeState {
+  const factory HomeMandopDetailsLoading() = _$HomeMandopDetailsLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$HomeMandopDetailsSuccessImplCopyWith<$Res> {
+  factory _$$HomeMandopDetailsSuccessImplCopyWith(
+          _$HomeMandopDetailsSuccessImpl value,
+          $Res Function(_$HomeMandopDetailsSuccessImpl) then) =
+      __$$HomeMandopDetailsSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserDetailsRM userDetailsRm});
+}
+
+/// @nodoc
+class __$$HomeMandopDetailsSuccessImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$HomeMandopDetailsSuccessImpl>
+    implements _$$HomeMandopDetailsSuccessImplCopyWith<$Res> {
+  __$$HomeMandopDetailsSuccessImplCopyWithImpl(
+      _$HomeMandopDetailsSuccessImpl _value,
+      $Res Function(_$HomeMandopDetailsSuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userDetailsRm = null,
+  }) {
+    return _then(_$HomeMandopDetailsSuccessImpl(
+      null == userDetailsRm
+          ? _value.userDetailsRm
+          : userDetailsRm // ignore: cast_nullable_to_non_nullable
+              as UserDetailsRM,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$HomeMandopDetailsSuccessImpl implements HomeMandopDetailsSuccess {
+  const _$HomeMandopDetailsSuccessImpl(this.userDetailsRm);
+
+  @override
+  final UserDetailsRM userDetailsRm;
+
+  @override
+  String toString() {
+    return 'HomeState.homeMandopDetailsSuccess(userDetailsRm: $userDetailsRm)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HomeMandopDetailsSuccessImpl &&
+            (identical(other.userDetailsRm, userDetailsRm) ||
+                other.userDetailsRm == userDetailsRm));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userDetailsRm);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HomeMandopDetailsSuccessImplCopyWith<_$HomeMandopDetailsSuccessImpl>
+      get copyWith => __$$HomeMandopDetailsSuccessImplCopyWithImpl<
+          _$HomeMandopDetailsSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() homeLoading,
+    required TResult Function(HomeResponseModel homeResponseModel) homeSuccess,
+    required TResult Function(ErrorHandler errorHandler) homeError,
+    required TResult Function() homeMandopDetailsLoading,
+    required TResult Function(UserDetailsRM userDetailsRm)
+        homeMandopDetailsSuccess,
+    required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsSuccess(userDetailsRm);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? homeLoading,
+    TResult? Function(HomeResponseModel homeResponseModel)? homeSuccess,
+    TResult? Function(ErrorHandler errorHandler)? homeError,
+    TResult? Function()? homeMandopDetailsLoading,
+    TResult? Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsSuccess?.call(userDetailsRm);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? homeLoading,
+    TResult Function(HomeResponseModel homeResponseModel)? homeSuccess,
+    TResult Function(ErrorHandler errorHandler)? homeError,
+    TResult Function()? homeMandopDetailsLoading,
+    TResult Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
+    required TResult orElse(),
+  }) {
+    if (homeMandopDetailsSuccess != null) {
+      return homeMandopDetailsSuccess(userDetailsRm);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(HomeLoading value) homeLoading,
+    required TResult Function(HomeSuccess value) homeSuccess,
+    required TResult Function(HomeError value) homeError,
+    required TResult Function(HomeMandopDetailsLoading value)
+        homeMandopDetailsLoading,
+    required TResult Function(HomeMandopDetailsSuccess value)
+        homeMandopDetailsSuccess,
+    required TResult Function(HomeMandopDetailsError value)
+        homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(HomeLoading value)? homeLoading,
+    TResult? Function(HomeSuccess value)? homeSuccess,
+    TResult? Function(HomeError value)? homeError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(HomeLoading value)? homeLoading,
+    TResult Function(HomeSuccess value)? homeSuccess,
+    TResult Function(HomeError value)? homeError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
+    required TResult orElse(),
+  }) {
+    if (homeMandopDetailsSuccess != null) {
+      return homeMandopDetailsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HomeMandopDetailsSuccess implements HomeState {
+  const factory HomeMandopDetailsSuccess(final UserDetailsRM userDetailsRm) =
+      _$HomeMandopDetailsSuccessImpl;
+
+  UserDetailsRM get userDetailsRm;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HomeMandopDetailsSuccessImplCopyWith<_$HomeMandopDetailsSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$HomeMandopDetailsErrorImplCopyWith<$Res> {
+  factory _$$HomeMandopDetailsErrorImplCopyWith(
+          _$HomeMandopDetailsErrorImpl value,
+          $Res Function(_$HomeMandopDetailsErrorImpl) then) =
+      __$$HomeMandopDetailsErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ErrorHandler errorHandler});
+}
+
+/// @nodoc
+class __$$HomeMandopDetailsErrorImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$HomeMandopDetailsErrorImpl>
+    implements _$$HomeMandopDetailsErrorImplCopyWith<$Res> {
+  __$$HomeMandopDetailsErrorImplCopyWithImpl(
+      _$HomeMandopDetailsErrorImpl _value,
+      $Res Function(_$HomeMandopDetailsErrorImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorHandler = null,
+  }) {
+    return _then(_$HomeMandopDetailsErrorImpl(
+      null == errorHandler
+          ? _value.errorHandler
+          : errorHandler // ignore: cast_nullable_to_non_nullable
+              as ErrorHandler,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$HomeMandopDetailsErrorImpl implements HomeMandopDetailsError {
+  const _$HomeMandopDetailsErrorImpl(this.errorHandler);
+
+  @override
+  final ErrorHandler errorHandler;
+
+  @override
+  String toString() {
+    return 'HomeState.homeMandopDetailsError(errorHandler: $errorHandler)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HomeMandopDetailsErrorImpl &&
+            (identical(other.errorHandler, errorHandler) ||
+                other.errorHandler == errorHandler));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorHandler);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HomeMandopDetailsErrorImplCopyWith<_$HomeMandopDetailsErrorImpl>
+      get copyWith => __$$HomeMandopDetailsErrorImplCopyWithImpl<
+          _$HomeMandopDetailsErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() homeLoading,
+    required TResult Function(HomeResponseModel homeResponseModel) homeSuccess,
+    required TResult Function(ErrorHandler errorHandler) homeError,
+    required TResult Function() homeMandopDetailsLoading,
+    required TResult Function(UserDetailsRM userDetailsRm)
+        homeMandopDetailsSuccess,
+    required TResult Function(ErrorHandler errorHandler) homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsError(errorHandler);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? homeLoading,
+    TResult? Function(HomeResponseModel homeResponseModel)? homeSuccess,
+    TResult? Function(ErrorHandler errorHandler)? homeError,
+    TResult? Function()? homeMandopDetailsLoading,
+    TResult? Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult? Function(ErrorHandler errorHandler)? homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsError?.call(errorHandler);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? homeLoading,
+    TResult Function(HomeResponseModel homeResponseModel)? homeSuccess,
+    TResult Function(ErrorHandler errorHandler)? homeError,
+    TResult Function()? homeMandopDetailsLoading,
+    TResult Function(UserDetailsRM userDetailsRm)? homeMandopDetailsSuccess,
+    TResult Function(ErrorHandler errorHandler)? homeMandopDetailsError,
+    required TResult orElse(),
+  }) {
+    if (homeMandopDetailsError != null) {
+      return homeMandopDetailsError(errorHandler);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(HomeLoading value) homeLoading,
+    required TResult Function(HomeSuccess value) homeSuccess,
+    required TResult Function(HomeError value) homeError,
+    required TResult Function(HomeMandopDetailsLoading value)
+        homeMandopDetailsLoading,
+    required TResult Function(HomeMandopDetailsSuccess value)
+        homeMandopDetailsSuccess,
+    required TResult Function(HomeMandopDetailsError value)
+        homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(HomeLoading value)? homeLoading,
+    TResult? Function(HomeSuccess value)? homeSuccess,
+    TResult? Function(HomeError value)? homeError,
+    TResult? Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult? Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult? Function(HomeMandopDetailsError value)? homeMandopDetailsError,
+  }) {
+    return homeMandopDetailsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(HomeLoading value)? homeLoading,
+    TResult Function(HomeSuccess value)? homeSuccess,
+    TResult Function(HomeError value)? homeError,
+    TResult Function(HomeMandopDetailsLoading value)? homeMandopDetailsLoading,
+    TResult Function(HomeMandopDetailsSuccess value)? homeMandopDetailsSuccess,
+    TResult Function(HomeMandopDetailsError value)? homeMandopDetailsError,
+    required TResult orElse(),
+  }) {
+    if (homeMandopDetailsError != null) {
+      return homeMandopDetailsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HomeMandopDetailsError implements HomeState {
+  const factory HomeMandopDetailsError(final ErrorHandler errorHandler) =
+      _$HomeMandopDetailsErrorImpl;
+
+  ErrorHandler get errorHandler;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HomeMandopDetailsErrorImplCopyWith<_$HomeMandopDetailsErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

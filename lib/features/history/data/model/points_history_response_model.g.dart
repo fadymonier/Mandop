@@ -12,7 +12,12 @@ PointsHistoryResponse _$PointsHistoryResponseFromJson(
       status: (json['status'] as num).toInt(),
       message: json['message'] as String,
       data: (json['data'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(k, YearData.fromJson(e as Map<String, dynamic>)),
+        (k, e) => MapEntry(
+            k,
+            (e as Map<String, dynamic>).map(
+              (k, e) =>
+                  MapEntry(k, YearData.fromJson(e as Map<String, dynamic>)),
+            )),
       ),
     );
 

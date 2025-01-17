@@ -11,8 +11,10 @@ class PointsHistoryRepo {
   Future<ApiResult<PointsHistoryResponse>> getPointsHistoryData() async {
     try {
       final response = await _historyApiService.getPointsHistoryData();
+      print(response); // Debugging line
       return ApiResult.success(response);
     } catch (error) {
+      print("Error: $error"); // Debugging line
       return ApiResult.failure(ErrorHandler.handle(error));
     }
   }

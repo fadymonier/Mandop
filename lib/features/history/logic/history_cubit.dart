@@ -7,8 +7,9 @@ class HistoryCubit extends Cubit<HistoryState> {
   HistoryCubit(this._pointsHistoryRepo) : super(const HistoryState.initial());
 
   void getHistory() async {
+    emit(const HistoryState.historyLoading()); // Emit loading state
     final response = await _pointsHistoryRepo.getPointsHistoryData();
-
+    print(response); // Debugging line
     response.when(
       success: (pointsHistoryResponse) {
         emit(HistoryState.historySuccess(pointsHistoryResponse));

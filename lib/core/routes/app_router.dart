@@ -38,14 +38,22 @@ class AppRouter {
         );
       case home:
         return MaterialPageRoute(
-          builder: (_) => MultiBlocProvider(
-            providers: [
-              BlocProvider(create: (context) => getit<HomeCubit>()),
-              BlocProvider(
-                  create: (context) => getit<HomeMandopDetailsCubit>()),
-            ],
+          builder: (_) => BlocProvider(
+            create: (context) =>
+                getit<HomeMandopDetailsCubit>()..getMandopDetailsHomeData(),
             child: const HomeView(),
           ),
+          //  builder: (_) =>
+          //
+          // MultiBlocProvider(
+          //   providers: [
+          //     BlocProvider(create: (context) => getit<HomeCubit>()),
+          //     BlocProvider(
+          //         create: (context) => getit<HomeMandopDetailsCubit>()
+          //           ..getMandopDetailsHomeData()),
+          //   ],
+          // child: const HomeView(),
+          // ),
         );
       case profile:
         return MaterialPageRoute(
@@ -57,7 +65,7 @@ class AppRouter {
       case history:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => getit<HistoryCubit>(),
+            create: (context) => getit<HistoryCubit>()..getHistory(),
             child: const HistoryScreenView(),
           ),
         );

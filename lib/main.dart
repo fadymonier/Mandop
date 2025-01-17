@@ -8,10 +8,10 @@ import 'package:mandoob/core/routes/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  setupGetIt();
   await SharedPrefHelper.init();
   await ScreenUtil.ensureScreenSize();
   await checkIfLoggedInUser();
-  setupGetIt();
 
   runApp(
     const MandoobApp(),
@@ -31,7 +31,7 @@ class MandoobApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.system,
         // initial route
-        initialRoute: AppRouter.splash,
+        initialRoute: AppRouter.signIn,
         onGenerateRoute: AppRouter.generateRoute,
       ),
     );

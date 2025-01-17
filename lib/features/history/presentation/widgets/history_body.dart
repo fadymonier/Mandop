@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mandoob/features/history/presentation/models/history_body_model.dart';
+import 'package:mandoob/core/utils/app_colors.dart';
+import 'package:mandoob/features/history/logic/history_cubit.dart';
+import 'package:mandoob/features/history/logic/history_state.dart';
+import 'package:mandoob/features/history/presentation/widgets/history_row.dart';
 import 'package:mandoob/features/history/presentation/widgets/mandop_history_profile_image.dart';
 import 'package:mandoob/features/navbar/history_navbar.dart';
 
@@ -16,48 +20,42 @@ class HistoryBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const MandopHistoryProfileImage(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const HistoryBodyContainerModel(
-                title: 'النقاط',
-                variable: '5000',
-                subTitle: 'نقطه',
-                imagePath: 'assets/images/historyPoints.png',
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/Dates');
-                },
-                child: const HistoryBodyContainerModel(
-                  title: 'الشهر',
-                  variable: 'أكتوبر',
-                  subTitle: '2024/',
-                  imagePath: 'assets/images/historyMonths.png',
-                ),
-              ),
-            ],
-          ),
           SizedBox(
             height: 20.h,
           ),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              HistoryBodyContainerModel(
-                title: 'عدد الاوردات',
-                variable: '50',
-                subTitle: 'جنيه',
-                imagePath: 'assets/images/historyOrders.png',
-              ),
-              HistoryBodyContainerModel(
-                title: 'عدد العملاء',
-                variable: '100',
-                subTitle: 'عميل',
-                imagePath: 'assets/images/historyClients.png',
-              ),
-            ],
+          const MandopHistoryProfileImage(),
+          SizedBox(
+            height: 20.h,
+          ),
+          BlocBuilder<HistoryCubit, HistoryState>(
+            buildWhen: (previous, current) =>
+                current is HistoryLoading ||
+                current is HistorySuccess ||
+                current is HistoryError,
+            builder: (context, state) {
+              return state.maybeWhen(
+                historyLoading: () => CircularProgressIndicator(
+                  color: AppColors.buttonColor,
+                ),
+                historySuccess: (historyResponse) {
+                  var historyData = historyResponse.data;
+                  // Assuming you need to pass a specific YearData from the map
+                  var yearData = historyData['someKey']?['someInnerKey'];
+                  if (yearData != null) {
+                    return HistoryRow(historyData: yearData);
+                  } else {
+                    return const Center(child: Text('No data available'));
+                  }
+                },
+                historyError: (error) {
+                  return Center(child: Text('Error: $error')); // Show error
+                },
+                orElse: () => const SizedBox.shrink(),
+              );
+            },
+          ),
+          SizedBox(
+            height: 20.h,
           ),
           const Spacer(),
           const HistoryNavbar(),

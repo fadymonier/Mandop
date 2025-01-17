@@ -12,8 +12,11 @@ class HomeMandopDetailsCubit extends Cubit<HomeManopDetailsState> {
   void getMandopDetailsHomeData() async {
     emit(const HomeManopDetailsState.homeMandopDetailsLoading());
     final response = await _homeMandopDetailsRepo.getMandopHomeDetails();
+
+    print(response.toString());
     response.when(
-      success: (UserDetailsRM userDetailsRM) {
+      success: (userDetailsRM) {
+        // final data = UserDetailsRM.fromJson.();
         emit(HomeManopDetailsState.homeMandopDetailsSuccess(userDetailsRM));
       },
       failure: (errorHandler) {
