@@ -23,14 +23,14 @@ class MandopProfileDetailsWidget extends StatelessWidget {
       height: 510.h,
       child: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             MandopDetailsModel(
                 title: "الأسم",
                 subTitle:
                     "${userData.data!.user!.fName} ${userData.data!.user!.lName}"),
             MandopDetailsModel(
-                title: ":رقم الهاتف",
+                title: "رقم الهاتف",
                 subTitle: userData.data!.user!.phoneNumber),
             MandopDetailsModel(
                 title: 'البريد الألكتروني',
@@ -39,10 +39,6 @@ class MandopProfileDetailsWidget extends StatelessWidget {
                 title: 'المسمى الوظيفي', subTitle: "مندوب مبيعات"),
             MandopDetailsModel(title: 'المنطقه', subTitle: "تمي الامديد"),
             MandopDetailsModel(title: 'المحافظه', subTitle: "الدقهليه"),
-            MandopDetailsModel(
-                title: 'العنوان على الخريطة',
-                subTitle:
-                    "المنصورة قسم 2، المنصورة 2، محافظة الدقهلية 7661351"),
             const SignOutWidget(),
           ],
         ),

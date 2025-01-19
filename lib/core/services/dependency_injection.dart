@@ -36,6 +36,7 @@ Future<void> setupGetIt() async {
   getit.registerFactory<HomeCubit>(() => HomeCubit(getit()));
   getit.registerFactory<HomeMandopDetailsCubit>(
       () => HomeMandopDetailsCubit(getit()));
+  getit.registerFactory<DataCubitFreezed>(() => DataCubitFreezed(getit()));
 
   // Profile
   getit.registerLazySingleton<ProfileApiService>(() => ProfileApiService(dio));
@@ -47,5 +48,4 @@ Future<void> setupGetIt() async {
   getit.registerLazySingleton<PointsHistoryRepo>(
       () => PointsHistoryRepo(getit()));
   getit.registerFactory<HistoryCubit>(() => HistoryCubit(getit()));
-  getit.registerFactory<DataCubitFreezed>(() => DataCubitFreezed(getit()));
 }

@@ -20,52 +20,49 @@ mixin _$HistoryState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() historyLoading,
-    required TResult Function(PointsHistoryResponse pointsHistoryResponse)
-        historySuccess,
-    required TResult Function(dynamic errorHandler) historyError,
+    required TResult Function(PointsHistoryResponse data) historySuccess,
+    required TResult Function(ErrorHandler? errorHandler) historyError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? historyLoading,
-    TResult? Function(PointsHistoryResponse pointsHistoryResponse)?
-        historySuccess,
-    TResult? Function(dynamic errorHandler)? historyError,
+    TResult? Function(PointsHistoryResponse data)? historySuccess,
+    TResult? Function(ErrorHandler? errorHandler)? historyError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? historyLoading,
-    TResult Function(PointsHistoryResponse pointsHistoryResponse)?
-        historySuccess,
-    TResult Function(dynamic errorHandler)? historyError,
+    TResult Function(PointsHistoryResponse data)? historySuccess,
+    TResult Function(ErrorHandler? errorHandler)? historyError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(HistoryLoading value) historyLoading,
-    required TResult Function(HistorySuccess value) historySuccess,
-    required TResult Function(HistoryError value) historyError,
+    required TResult Function(_HistoryLoading value) historyLoading,
+    required TResult Function(_HistorySuccess value) historySuccess,
+    required TResult Function(_HistoryError value) historyError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(HistoryLoading value)? historyLoading,
-    TResult? Function(HistorySuccess value)? historySuccess,
-    TResult? Function(HistoryError value)? historyError,
+    TResult? Function(_HistoryLoading value)? historyLoading,
+    TResult? Function(_HistorySuccess value)? historySuccess,
+    TResult? Function(_HistoryError value)? historyError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(HistoryLoading value)? historyLoading,
-    TResult Function(HistorySuccess value)? historySuccess,
-    TResult Function(HistoryError value)? historyError,
+    TResult Function(_HistoryLoading value)? historyLoading,
+    TResult Function(_HistorySuccess value)? historySuccess,
+    TResult Function(_HistoryError value)? historyError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,9 +132,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() historyLoading,
-    required TResult Function(PointsHistoryResponse pointsHistoryResponse)
-        historySuccess,
-    required TResult Function(dynamic errorHandler) historyError,
+    required TResult Function(PointsHistoryResponse data) historySuccess,
+    required TResult Function(ErrorHandler? errorHandler) historyError,
   }) {
     return initial();
   }
@@ -147,9 +143,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? historyLoading,
-    TResult? Function(PointsHistoryResponse pointsHistoryResponse)?
-        historySuccess,
-    TResult? Function(dynamic errorHandler)? historyError,
+    TResult? Function(PointsHistoryResponse data)? historySuccess,
+    TResult? Function(ErrorHandler? errorHandler)? historyError,
   }) {
     return initial?.call();
   }
@@ -159,9 +154,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? historyLoading,
-    TResult Function(PointsHistoryResponse pointsHistoryResponse)?
-        historySuccess,
-    TResult Function(dynamic errorHandler)? historyError,
+    TResult Function(PointsHistoryResponse data)? historySuccess,
+    TResult Function(ErrorHandler? errorHandler)? historyError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -174,9 +168,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(HistoryLoading value) historyLoading,
-    required TResult Function(HistorySuccess value) historySuccess,
-    required TResult Function(HistoryError value) historyError,
+    required TResult Function(_HistoryLoading value) historyLoading,
+    required TResult Function(_HistorySuccess value) historySuccess,
+    required TResult Function(_HistoryError value) historyError,
   }) {
     return initial(this);
   }
@@ -185,9 +179,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(HistoryLoading value)? historyLoading,
-    TResult? Function(HistorySuccess value)? historySuccess,
-    TResult? Function(HistoryError value)? historyError,
+    TResult? Function(_HistoryLoading value)? historyLoading,
+    TResult? Function(_HistorySuccess value)? historySuccess,
+    TResult? Function(_HistoryError value)? historyError,
   }) {
     return initial?.call(this);
   }
@@ -196,9 +190,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(HistoryLoading value)? historyLoading,
-    TResult Function(HistorySuccess value)? historySuccess,
-    TResult Function(HistoryError value)? historyError,
+    TResult Function(_HistoryLoading value)? historyLoading,
+    TResult Function(_HistorySuccess value)? historySuccess,
+    TResult Function(_HistoryError value)? historyError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -233,7 +227,7 @@ class __$$HistoryLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HistoryLoadingImpl implements HistoryLoading {
+class _$HistoryLoadingImpl implements _HistoryLoading {
   const _$HistoryLoadingImpl();
 
   @override
@@ -255,9 +249,8 @@ class _$HistoryLoadingImpl implements HistoryLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() historyLoading,
-    required TResult Function(PointsHistoryResponse pointsHistoryResponse)
-        historySuccess,
-    required TResult Function(dynamic errorHandler) historyError,
+    required TResult Function(PointsHistoryResponse data) historySuccess,
+    required TResult Function(ErrorHandler? errorHandler) historyError,
   }) {
     return historyLoading();
   }
@@ -267,9 +260,8 @@ class _$HistoryLoadingImpl implements HistoryLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? historyLoading,
-    TResult? Function(PointsHistoryResponse pointsHistoryResponse)?
-        historySuccess,
-    TResult? Function(dynamic errorHandler)? historyError,
+    TResult? Function(PointsHistoryResponse data)? historySuccess,
+    TResult? Function(ErrorHandler? errorHandler)? historyError,
   }) {
     return historyLoading?.call();
   }
@@ -279,9 +271,8 @@ class _$HistoryLoadingImpl implements HistoryLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? historyLoading,
-    TResult Function(PointsHistoryResponse pointsHistoryResponse)?
-        historySuccess,
-    TResult Function(dynamic errorHandler)? historyError,
+    TResult Function(PointsHistoryResponse data)? historySuccess,
+    TResult Function(ErrorHandler? errorHandler)? historyError,
     required TResult orElse(),
   }) {
     if (historyLoading != null) {
@@ -294,9 +285,9 @@ class _$HistoryLoadingImpl implements HistoryLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(HistoryLoading value) historyLoading,
-    required TResult Function(HistorySuccess value) historySuccess,
-    required TResult Function(HistoryError value) historyError,
+    required TResult Function(_HistoryLoading value) historyLoading,
+    required TResult Function(_HistorySuccess value) historySuccess,
+    required TResult Function(_HistoryError value) historyError,
   }) {
     return historyLoading(this);
   }
@@ -305,9 +296,9 @@ class _$HistoryLoadingImpl implements HistoryLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(HistoryLoading value)? historyLoading,
-    TResult? Function(HistorySuccess value)? historySuccess,
-    TResult? Function(HistoryError value)? historyError,
+    TResult? Function(_HistoryLoading value)? historyLoading,
+    TResult? Function(_HistorySuccess value)? historySuccess,
+    TResult? Function(_HistoryError value)? historyError,
   }) {
     return historyLoading?.call(this);
   }
@@ -316,9 +307,9 @@ class _$HistoryLoadingImpl implements HistoryLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(HistoryLoading value)? historyLoading,
-    TResult Function(HistorySuccess value)? historySuccess,
-    TResult Function(HistoryError value)? historyError,
+    TResult Function(_HistoryLoading value)? historyLoading,
+    TResult Function(_HistorySuccess value)? historySuccess,
+    TResult Function(_HistoryError value)? historyError,
     required TResult orElse(),
   }) {
     if (historyLoading != null) {
@@ -328,8 +319,8 @@ class _$HistoryLoadingImpl implements HistoryLoading {
   }
 }
 
-abstract class HistoryLoading implements HistoryState {
-  const factory HistoryLoading() = _$HistoryLoadingImpl;
+abstract class _HistoryLoading implements HistoryState {
+  const factory _HistoryLoading() = _$HistoryLoadingImpl;
 }
 
 /// @nodoc
@@ -338,7 +329,7 @@ abstract class _$$HistorySuccessImplCopyWith<$Res> {
           $Res Function(_$HistorySuccessImpl) then) =
       __$$HistorySuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({PointsHistoryResponse pointsHistoryResponse});
+  $Res call({PointsHistoryResponse data});
 }
 
 /// @nodoc
@@ -354,12 +345,12 @@ class __$$HistorySuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? pointsHistoryResponse = null,
+    Object? data = null,
   }) {
     return _then(_$HistorySuccessImpl(
-      null == pointsHistoryResponse
-          ? _value.pointsHistoryResponse
-          : pointsHistoryResponse // ignore: cast_nullable_to_non_nullable
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
               as PointsHistoryResponse,
     ));
   }
@@ -367,15 +358,15 @@ class __$$HistorySuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HistorySuccessImpl implements HistorySuccess {
-  const _$HistorySuccessImpl(this.pointsHistoryResponse);
+class _$HistorySuccessImpl implements _HistorySuccess {
+  const _$HistorySuccessImpl(this.data);
 
   @override
-  final PointsHistoryResponse pointsHistoryResponse;
+  final PointsHistoryResponse data;
 
   @override
   String toString() {
-    return 'HistoryState.historySuccess(pointsHistoryResponse: $pointsHistoryResponse)';
+    return 'HistoryState.historySuccess(data: $data)';
   }
 
   @override
@@ -383,12 +374,11 @@ class _$HistorySuccessImpl implements HistorySuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HistorySuccessImpl &&
-            (identical(other.pointsHistoryResponse, pointsHistoryResponse) ||
-                other.pointsHistoryResponse == pointsHistoryResponse));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pointsHistoryResponse);
+  int get hashCode => Object.hash(runtimeType, data);
 
   /// Create a copy of HistoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -404,11 +394,10 @@ class _$HistorySuccessImpl implements HistorySuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() historyLoading,
-    required TResult Function(PointsHistoryResponse pointsHistoryResponse)
-        historySuccess,
-    required TResult Function(dynamic errorHandler) historyError,
+    required TResult Function(PointsHistoryResponse data) historySuccess,
+    required TResult Function(ErrorHandler? errorHandler) historyError,
   }) {
-    return historySuccess(pointsHistoryResponse);
+    return historySuccess(data);
   }
 
   @override
@@ -416,11 +405,10 @@ class _$HistorySuccessImpl implements HistorySuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? historyLoading,
-    TResult? Function(PointsHistoryResponse pointsHistoryResponse)?
-        historySuccess,
-    TResult? Function(dynamic errorHandler)? historyError,
+    TResult? Function(PointsHistoryResponse data)? historySuccess,
+    TResult? Function(ErrorHandler? errorHandler)? historyError,
   }) {
-    return historySuccess?.call(pointsHistoryResponse);
+    return historySuccess?.call(data);
   }
 
   @override
@@ -428,13 +416,12 @@ class _$HistorySuccessImpl implements HistorySuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? historyLoading,
-    TResult Function(PointsHistoryResponse pointsHistoryResponse)?
-        historySuccess,
-    TResult Function(dynamic errorHandler)? historyError,
+    TResult Function(PointsHistoryResponse data)? historySuccess,
+    TResult Function(ErrorHandler? errorHandler)? historyError,
     required TResult orElse(),
   }) {
     if (historySuccess != null) {
-      return historySuccess(pointsHistoryResponse);
+      return historySuccess(data);
     }
     return orElse();
   }
@@ -443,9 +430,9 @@ class _$HistorySuccessImpl implements HistorySuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(HistoryLoading value) historyLoading,
-    required TResult Function(HistorySuccess value) historySuccess,
-    required TResult Function(HistoryError value) historyError,
+    required TResult Function(_HistoryLoading value) historyLoading,
+    required TResult Function(_HistorySuccess value) historySuccess,
+    required TResult Function(_HistoryError value) historyError,
   }) {
     return historySuccess(this);
   }
@@ -454,9 +441,9 @@ class _$HistorySuccessImpl implements HistorySuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(HistoryLoading value)? historyLoading,
-    TResult? Function(HistorySuccess value)? historySuccess,
-    TResult? Function(HistoryError value)? historyError,
+    TResult? Function(_HistoryLoading value)? historyLoading,
+    TResult? Function(_HistorySuccess value)? historySuccess,
+    TResult? Function(_HistoryError value)? historyError,
   }) {
     return historySuccess?.call(this);
   }
@@ -465,9 +452,9 @@ class _$HistorySuccessImpl implements HistorySuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(HistoryLoading value)? historyLoading,
-    TResult Function(HistorySuccess value)? historySuccess,
-    TResult Function(HistoryError value)? historyError,
+    TResult Function(_HistoryLoading value)? historyLoading,
+    TResult Function(_HistorySuccess value)? historySuccess,
+    TResult Function(_HistoryError value)? historyError,
     required TResult orElse(),
   }) {
     if (historySuccess != null) {
@@ -477,11 +464,11 @@ class _$HistorySuccessImpl implements HistorySuccess {
   }
 }
 
-abstract class HistorySuccess implements HistoryState {
-  const factory HistorySuccess(
-      final PointsHistoryResponse pointsHistoryResponse) = _$HistorySuccessImpl;
+abstract class _HistorySuccess implements HistoryState {
+  const factory _HistorySuccess(final PointsHistoryResponse data) =
+      _$HistorySuccessImpl;
 
-  PointsHistoryResponse get pointsHistoryResponse;
+  PointsHistoryResponse get data;
 
   /// Create a copy of HistoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -496,7 +483,7 @@ abstract class _$$HistoryErrorImplCopyWith<$Res> {
           _$HistoryErrorImpl value, $Res Function(_$HistoryErrorImpl) then) =
       __$$HistoryErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({dynamic errorHandler});
+  $Res call({ErrorHandler? errorHandler});
 }
 
 /// @nodoc
@@ -515,18 +502,21 @@ class __$$HistoryErrorImplCopyWithImpl<$Res>
     Object? errorHandler = freezed,
   }) {
     return _then(_$HistoryErrorImpl(
-      freezed == errorHandler ? _value.errorHandler! : errorHandler,
+      freezed == errorHandler
+          ? _value.errorHandler
+          : errorHandler // ignore: cast_nullable_to_non_nullable
+              as ErrorHandler?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HistoryErrorImpl implements HistoryError {
+class _$HistoryErrorImpl implements _HistoryError {
   const _$HistoryErrorImpl(this.errorHandler);
 
   @override
-  final dynamic errorHandler;
+  final ErrorHandler? errorHandler;
 
   @override
   String toString() {
@@ -538,13 +528,12 @@ class _$HistoryErrorImpl implements HistoryError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HistoryErrorImpl &&
-            const DeepCollectionEquality()
-                .equals(other.errorHandler, errorHandler));
+            (identical(other.errorHandler, errorHandler) ||
+                other.errorHandler == errorHandler));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(errorHandler));
+  int get hashCode => Object.hash(runtimeType, errorHandler);
 
   /// Create a copy of HistoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -559,9 +548,8 @@ class _$HistoryErrorImpl implements HistoryError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() historyLoading,
-    required TResult Function(PointsHistoryResponse pointsHistoryResponse)
-        historySuccess,
-    required TResult Function(dynamic errorHandler) historyError,
+    required TResult Function(PointsHistoryResponse data) historySuccess,
+    required TResult Function(ErrorHandler? errorHandler) historyError,
   }) {
     return historyError(errorHandler);
   }
@@ -571,9 +559,8 @@ class _$HistoryErrorImpl implements HistoryError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? historyLoading,
-    TResult? Function(PointsHistoryResponse pointsHistoryResponse)?
-        historySuccess,
-    TResult? Function(dynamic errorHandler)? historyError,
+    TResult? Function(PointsHistoryResponse data)? historySuccess,
+    TResult? Function(ErrorHandler? errorHandler)? historyError,
   }) {
     return historyError?.call(errorHandler);
   }
@@ -583,9 +570,8 @@ class _$HistoryErrorImpl implements HistoryError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? historyLoading,
-    TResult Function(PointsHistoryResponse pointsHistoryResponse)?
-        historySuccess,
-    TResult Function(dynamic errorHandler)? historyError,
+    TResult Function(PointsHistoryResponse data)? historySuccess,
+    TResult Function(ErrorHandler? errorHandler)? historyError,
     required TResult orElse(),
   }) {
     if (historyError != null) {
@@ -598,9 +584,9 @@ class _$HistoryErrorImpl implements HistoryError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(HistoryLoading value) historyLoading,
-    required TResult Function(HistorySuccess value) historySuccess,
-    required TResult Function(HistoryError value) historyError,
+    required TResult Function(_HistoryLoading value) historyLoading,
+    required TResult Function(_HistorySuccess value) historySuccess,
+    required TResult Function(_HistoryError value) historyError,
   }) {
     return historyError(this);
   }
@@ -609,9 +595,9 @@ class _$HistoryErrorImpl implements HistoryError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(HistoryLoading value)? historyLoading,
-    TResult? Function(HistorySuccess value)? historySuccess,
-    TResult? Function(HistoryError value)? historyError,
+    TResult? Function(_HistoryLoading value)? historyLoading,
+    TResult? Function(_HistorySuccess value)? historySuccess,
+    TResult? Function(_HistoryError value)? historyError,
   }) {
     return historyError?.call(this);
   }
@@ -620,9 +606,9 @@ class _$HistoryErrorImpl implements HistoryError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(HistoryLoading value)? historyLoading,
-    TResult Function(HistorySuccess value)? historySuccess,
-    TResult Function(HistoryError value)? historyError,
+    TResult Function(_HistoryLoading value)? historyLoading,
+    TResult Function(_HistorySuccess value)? historySuccess,
+    TResult Function(_HistoryError value)? historyError,
     required TResult orElse(),
   }) {
     if (historyError != null) {
@@ -632,10 +618,11 @@ class _$HistoryErrorImpl implements HistoryError {
   }
 }
 
-abstract class HistoryError implements HistoryState {
-  const factory HistoryError(final dynamic errorHandler) = _$HistoryErrorImpl;
+abstract class _HistoryError implements HistoryState {
+  const factory _HistoryError(final ErrorHandler? errorHandler) =
+      _$HistoryErrorImpl;
 
-  dynamic get errorHandler;
+  ErrorHandler? get errorHandler;
 
   /// Create a copy of HistoryState
   /// with the given fields replaced by the non-null parameter values.

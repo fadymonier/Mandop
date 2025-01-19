@@ -37,6 +37,9 @@ class MandopDetailsModel extends StatelessWidget {
                   color: AppColors.blackColor,
                 ),
               ),
+              SizedBox(
+                height: 2.h,
+              ),
               Text(
                 subTitle,
                 textDirection: TextDirection.rtl,

@@ -47,3 +47,4 @@ checkIfLoggedInUser() async {
     isLoggedInUser = false;
   }
 }
+//dart run build_runner build --delete-conflicting-outputs

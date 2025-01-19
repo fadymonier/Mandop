@@ -11,14 +11,7 @@ PointsHistoryResponse _$PointsHistoryResponseFromJson(
     PointsHistoryResponse(
       status: (json['status'] as num).toInt(),
       message: json['message'] as String,
-      data: (json['data'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(
-            k,
-            (e as Map<String, dynamic>).map(
-              (k, e) =>
-                  MapEntry(k, YearData.fromJson(e as Map<String, dynamic>)),
-            )),
-      ),
+      data: PointsHistoryData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PointsHistoryResponseToJson(
@@ -29,16 +22,35 @@ Map<String, dynamic> _$PointsHistoryResponseToJson(
       'data': instance.data,
     };
 
-YearData _$YearDataFromJson(Map<String, dynamic> json) => YearData(
-      totalPoints: json['totalPoints'] as String,
-      month: json['month'] as String,
-      year: json['year'] as String,
-      lastCreatedAt: json['lastCreatedAt'] as String,
+PointsHistoryData _$PointsHistoryDataFromJson(Map<String, dynamic> json) =>
+    PointsHistoryData(
+      points: (json['points'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(
+            k,
+            (e as Map<String, dynamic>).map(
+              (k, e) => MapEntry(
+                  k, PointsHistory.fromJson(e as Map<String, dynamic>)),
+            )),
+      ),
     );
 
-Map<String, dynamic> _$YearDataToJson(YearData instance) => <String, dynamic>{
-      'totalPoints': instance.totalPoints,
+Map<String, dynamic> _$PointsHistoryDataToJson(PointsHistoryData instance) =>
+    <String, dynamic>{
+      'points': instance.points,
+    };
+
+PointsHistory _$PointsHistoryFromJson(Map<String, dynamic> json) =>
+    PointsHistory(
+      totalPoints: json['total_points'] as String,
+      month: json['month'] as String,
+      year: (json['year'] as num).toInt(),
+      lastCreatedAt: json['last_created_at'] as String,
+    );
+
+Map<String, dynamic> _$PointsHistoryToJson(PointsHistory instance) =>
+    <String, dynamic>{
+      'total_points': instance.totalPoints,
       'month': instance.month,
       'year': instance.year,
-      'lastCreatedAt': instance.lastCreatedAt,
+      'last_created_at': instance.lastCreatedAt,
     };

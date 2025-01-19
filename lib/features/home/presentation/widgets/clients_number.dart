@@ -22,20 +22,11 @@ class ClientsNumberWidget extends StatelessWidget {
         return state.maybeWhen(
           homeLoading: () {
             return SizedBox(
-              width: 172.w,
-              height: 145.h,
-              child: Center(
-                child: CircularProgressIndicator(
-                  color: AppColors.buttonColor,
-                ),
-              ),
-            );
+                width: 172.w, height: 145.h, child: const SizedBox.shrink());
           },
           homeSuccess: (homeResponseModel) {
             final customersCounts =
                 homeResponseModel.data?.customersCounts ?? 0;
-
-            // Debugging: Check if customersCounts is valid
 
             return Row(
               children: [

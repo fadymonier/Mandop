@@ -10,8 +10,8 @@ class ProfileCubit extends Cubit<ProfileState> {
     emit(const ProfileState.profileLoading());
     final response = await _profileRepo.getProfileDetailsData();
     response.when(
-      success: (userDetailsRM) {
-        emit(ProfileState.profileSuccess(userDetailsRM));
+      success: (r) {
+        emit(ProfileState.profileSuccess(r));
       },
       failure: (errorHandler) {
         emit(ProfileState.profileError(errorHandler));

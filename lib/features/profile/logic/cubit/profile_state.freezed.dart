@@ -43,26 +43,26 @@ mixin _$ProfileState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(ProfileLoading value) profileLoading,
-    required TResult Function(ProfileSuccess value) profileSuccess,
-    required TResult Function(ProfileError value) profileError,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ProfileLoading value) profileLoading,
+    required TResult Function(_ProfileSuccess value) profileSuccess,
+    required TResult Function(_ProfileError value) profileError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(ProfileLoading value)? profileLoading,
-    TResult? Function(ProfileSuccess value)? profileSuccess,
-    TResult? Function(ProfileError value)? profileError,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ProfileLoading value)? profileLoading,
+    TResult? Function(_ProfileSuccess value)? profileSuccess,
+    TResult? Function(_ProfileError value)? profileError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(ProfileLoading value)? profileLoading,
-    TResult Function(ProfileSuccess value)? profileSuccess,
-    TResult Function(ProfileError value)? profileError,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ProfileLoading value)? profileLoading,
+    TResult Function(_ProfileSuccess value)? profileSuccess,
+    TResult Function(_ProfileError value)? profileError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -110,7 +110,7 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements Initial {
+class _$InitialImpl implements _Initial {
   const _$InitialImpl();
 
   @override
@@ -167,10 +167,10 @@ class _$InitialImpl implements Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(ProfileLoading value) profileLoading,
-    required TResult Function(ProfileSuccess value) profileSuccess,
-    required TResult Function(ProfileError value) profileError,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ProfileLoading value) profileLoading,
+    required TResult Function(_ProfileSuccess value) profileSuccess,
+    required TResult Function(_ProfileError value) profileError,
   }) {
     return initial(this);
   }
@@ -178,10 +178,10 @@ class _$InitialImpl implements Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(ProfileLoading value)? profileLoading,
-    TResult? Function(ProfileSuccess value)? profileSuccess,
-    TResult? Function(ProfileError value)? profileError,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ProfileLoading value)? profileLoading,
+    TResult? Function(_ProfileSuccess value)? profileSuccess,
+    TResult? Function(_ProfileError value)? profileError,
   }) {
     return initial?.call(this);
   }
@@ -189,10 +189,10 @@ class _$InitialImpl implements Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(ProfileLoading value)? profileLoading,
-    TResult Function(ProfileSuccess value)? profileSuccess,
-    TResult Function(ProfileError value)? profileError,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ProfileLoading value)? profileLoading,
+    TResult Function(_ProfileSuccess value)? profileSuccess,
+    TResult Function(_ProfileError value)? profileError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -202,8 +202,8 @@ class _$InitialImpl implements Initial {
   }
 }
 
-abstract class Initial implements ProfileState {
-  const factory Initial() = _$InitialImpl;
+abstract class _Initial implements ProfileState {
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
@@ -227,7 +227,7 @@ class __$$ProfileLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileLoadingImpl implements ProfileLoading {
+class _$ProfileLoadingImpl implements _ProfileLoading {
   const _$ProfileLoadingImpl();
 
   @override
@@ -284,10 +284,10 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(ProfileLoading value) profileLoading,
-    required TResult Function(ProfileSuccess value) profileSuccess,
-    required TResult Function(ProfileError value) profileError,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ProfileLoading value) profileLoading,
+    required TResult Function(_ProfileSuccess value) profileSuccess,
+    required TResult Function(_ProfileError value) profileError,
   }) {
     return profileLoading(this);
   }
@@ -295,10 +295,10 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(ProfileLoading value)? profileLoading,
-    TResult? Function(ProfileSuccess value)? profileSuccess,
-    TResult? Function(ProfileError value)? profileError,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ProfileLoading value)? profileLoading,
+    TResult? Function(_ProfileSuccess value)? profileSuccess,
+    TResult? Function(_ProfileError value)? profileError,
   }) {
     return profileLoading?.call(this);
   }
@@ -306,10 +306,10 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(ProfileLoading value)? profileLoading,
-    TResult Function(ProfileSuccess value)? profileSuccess,
-    TResult Function(ProfileError value)? profileError,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ProfileLoading value)? profileLoading,
+    TResult Function(_ProfileSuccess value)? profileSuccess,
+    TResult Function(_ProfileError value)? profileError,
     required TResult orElse(),
   }) {
     if (profileLoading != null) {
@@ -319,8 +319,8 @@ class _$ProfileLoadingImpl implements ProfileLoading {
   }
 }
 
-abstract class ProfileLoading implements ProfileState {
-  const factory ProfileLoading() = _$ProfileLoadingImpl;
+abstract class _ProfileLoading implements ProfileState {
+  const factory _ProfileLoading() = _$ProfileLoadingImpl;
 }
 
 /// @nodoc
@@ -358,7 +358,7 @@ class __$$ProfileSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileSuccessImpl implements ProfileSuccess {
+class _$ProfileSuccessImpl implements _ProfileSuccess {
   const _$ProfileSuccessImpl(this.userDetailsRM);
 
   @override
@@ -430,10 +430,10 @@ class _$ProfileSuccessImpl implements ProfileSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(ProfileLoading value) profileLoading,
-    required TResult Function(ProfileSuccess value) profileSuccess,
-    required TResult Function(ProfileError value) profileError,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ProfileLoading value) profileLoading,
+    required TResult Function(_ProfileSuccess value) profileSuccess,
+    required TResult Function(_ProfileError value) profileError,
   }) {
     return profileSuccess(this);
   }
@@ -441,10 +441,10 @@ class _$ProfileSuccessImpl implements ProfileSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(ProfileLoading value)? profileLoading,
-    TResult? Function(ProfileSuccess value)? profileSuccess,
-    TResult? Function(ProfileError value)? profileError,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ProfileLoading value)? profileLoading,
+    TResult? Function(_ProfileSuccess value)? profileSuccess,
+    TResult? Function(_ProfileError value)? profileError,
   }) {
     return profileSuccess?.call(this);
   }
@@ -452,10 +452,10 @@ class _$ProfileSuccessImpl implements ProfileSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(ProfileLoading value)? profileLoading,
-    TResult Function(ProfileSuccess value)? profileSuccess,
-    TResult Function(ProfileError value)? profileError,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ProfileLoading value)? profileLoading,
+    TResult Function(_ProfileSuccess value)? profileSuccess,
+    TResult Function(_ProfileError value)? profileError,
     required TResult orElse(),
   }) {
     if (profileSuccess != null) {
@@ -465,8 +465,8 @@ class _$ProfileSuccessImpl implements ProfileSuccess {
   }
 }
 
-abstract class ProfileSuccess implements ProfileState {
-  const factory ProfileSuccess(final UserDetailsRM userDetailsRM) =
+abstract class _ProfileSuccess implements ProfileState {
+  const factory _ProfileSuccess(final UserDetailsRM userDetailsRM) =
       _$ProfileSuccessImpl;
 
   UserDetailsRM get userDetailsRM;
@@ -513,7 +513,7 @@ class __$$ProfileErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileErrorImpl implements ProfileError {
+class _$ProfileErrorImpl implements _ProfileError {
   const _$ProfileErrorImpl(this.errorHandler);
 
   @override
@@ -584,10 +584,10 @@ class _$ProfileErrorImpl implements ProfileError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(ProfileLoading value) profileLoading,
-    required TResult Function(ProfileSuccess value) profileSuccess,
-    required TResult Function(ProfileError value) profileError,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ProfileLoading value) profileLoading,
+    required TResult Function(_ProfileSuccess value) profileSuccess,
+    required TResult Function(_ProfileError value) profileError,
   }) {
     return profileError(this);
   }
@@ -595,10 +595,10 @@ class _$ProfileErrorImpl implements ProfileError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(ProfileLoading value)? profileLoading,
-    TResult? Function(ProfileSuccess value)? profileSuccess,
-    TResult? Function(ProfileError value)? profileError,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ProfileLoading value)? profileLoading,
+    TResult? Function(_ProfileSuccess value)? profileSuccess,
+    TResult? Function(_ProfileError value)? profileError,
   }) {
     return profileError?.call(this);
   }
@@ -606,10 +606,10 @@ class _$ProfileErrorImpl implements ProfileError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(ProfileLoading value)? profileLoading,
-    TResult Function(ProfileSuccess value)? profileSuccess,
-    TResult Function(ProfileError value)? profileError,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ProfileLoading value)? profileLoading,
+    TResult Function(_ProfileSuccess value)? profileSuccess,
+    TResult Function(_ProfileError value)? profileError,
     required TResult orElse(),
   }) {
     if (profileError != null) {
@@ -619,8 +619,8 @@ class _$ProfileErrorImpl implements ProfileError {
   }
 }
 
-abstract class ProfileError implements ProfileState {
-  const factory ProfileError(final ErrorHandler errorHandler) =
+abstract class _ProfileError implements ProfileState {
+  const factory _ProfileError(final ErrorHandler errorHandler) =
       _$ProfileErrorImpl;
 
   ErrorHandler get errorHandler;

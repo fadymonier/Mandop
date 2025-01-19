@@ -27,7 +27,7 @@ class _MandopHomeDetailsState extends State<MandopHomeDetails> {
             start: () {
               return Center(
                 child: CircularProgressIndicator(
-                  color: AppColors.buttonColor,
+                  color: AppColors.navBarIconSelectedColor,
                 ),
               );
             },

@@ -31,12 +31,7 @@ class HomeBody extends StatelessWidget {
                     builder: (context, state) {
                       return state.maybeWhen(
                         homeLoading: () {
-                          return Center(
-                            child: CircularProgressIndicator(
-                              color: AppColors.buttonColor,
-                              strokeWidth: 2.0,
-                            ),
-                          );
+                          return const SizedBox.shrink();
                         },
                         homeSuccess: (response) {
                           final homeData = response.data;

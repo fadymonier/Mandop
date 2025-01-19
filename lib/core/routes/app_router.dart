@@ -64,7 +64,7 @@ class AppRouter {
       case history:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => getit<HistoryCubit>()..getHistory(),
+            create: (context) => getit<HistoryCubit>()..getHistoryData(),
             child: const HistoryScreenView(),
           ),
         );
