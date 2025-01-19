@@ -4,9 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
 
 class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const ProfileAppBar({
-    super.key,
-  });
+  const ProfileAppBar({super.key});
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
   @override

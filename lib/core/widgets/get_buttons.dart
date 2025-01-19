@@ -1,9 +1,8 @@
-
 // import 'package:flutter/material.dart';
 
 // class GetButtons extends StatelessWidget {
 //   const GetButtons(
-//       {super.key, required this.currentIndex, required this.controller});
+//       { required this.currentIndex, required this.controller});
 //   final int currentIndex;
 //   final PageController controller;
 //   @override

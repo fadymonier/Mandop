@@ -27,11 +27,14 @@ class MandopProfileDetailsWidget extends StatelessWidget {
           children: [
             MandopDetailsModel(
                 title: "الأسم",
-                subTitle: "${userData.fName} ${userData.lName}"),
+                subTitle:
+                    "${userData.data!.user!.fName} ${userData.data!.user!.lName}"),
             MandopDetailsModel(
-                title: ":رقم الهاتف", subTitle: userData.phoneNumber),
+                title: ":رقم الهاتف",
+                subTitle: userData.data!.user!.phoneNumber),
             MandopDetailsModel(
-                title: 'البريد الألكتروني', subTitle: userData.email),
+                title: 'البريد الألكتروني',
+                subTitle: userData.data!.user!.email),
             MandopDetailsModel(
                 title: 'المسمى الوظيفي', subTitle: "مندوب مبيعات"),
             MandopDetailsModel(title: 'المنطقه', subTitle: "تمي الامديد"),

@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:mandoob/core/api/error_handler.dart';
 import 'package:mandoob/features/home/data/models/home_response_model.dart';
 import 'package:mandoob/features/home/data/models/mandop_home_details_response_model.dart';
-import 'package:mandoob/features/profile/presentation/models/mandop_details_model.dart';
 
 part 'home_state.freezed.dart';
 

@@ -3,7 +3,7 @@ class ApiConstnats {
   static const String login = "api/v1/sales_person/login";
   static const String logout = "api/v1/sales_person/logout";
   static const String pointsHistory = "api/v1/sales_person/points-history/";
-  static const String profile = "api/v1/sales_person/profile/";
+  static const String profile = "api/v1/sales_person/profile";
   static const String home = "api/v1/sales_person/home";
   static const String monthPoints =
       "api/v1/sales_person/points-by-month/2025/Feb";

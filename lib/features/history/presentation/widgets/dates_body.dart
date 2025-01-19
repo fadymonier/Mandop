@@ -4,9 +4,7 @@ import 'package:mandoob/features/history/presentation/models/date_model.dart';
 import 'package:mandoob/features/navbar/history_navbar.dart';
 
 class DatesBody extends StatelessWidget {
-  const DatesBody({
-    super.key,
-  });
+  const DatesBody({super.key});
 
   @override
   Widget build(BuildContext context) {

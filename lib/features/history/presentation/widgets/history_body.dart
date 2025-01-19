@@ -9,9 +9,7 @@ import 'package:mandoob/features/history/presentation/widgets/mandop_history_pro
 import 'package:mandoob/features/navbar/history_navbar.dart';
 
 class HistoryBody extends StatelessWidget {
-  const HistoryBody({
-    super.key,
-  });
+  const HistoryBody({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -4,9 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
 
 class MandopHistoryProfileImage extends StatelessWidget {
-  const MandopHistoryProfileImage({
-    super.key,
-  });
+  const MandopHistoryProfileImage({super.key});
 
   @override
   Widget build(BuildContext context) {

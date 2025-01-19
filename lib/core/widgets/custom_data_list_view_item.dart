@@ -8,7 +8,7 @@
 
 // class CustomDataListViewItem extends StatelessWidget {
 //   const CustomDataListViewItem(
-//       {super.key, required this.model, required this.routePath});
+//       { required this.model, required this.routePath});
 //   final DataModel model;
 //   final String routePath;
 //   @override

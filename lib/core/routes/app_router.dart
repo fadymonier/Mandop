@@ -1,18 +1,17 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mandoob/core/services/dependency_injection.dart';
 import 'package:mandoob/features/auth/sign_in/logic/cubit/login_cubit.dart';
 import 'package:mandoob/features/auth/sign_in/presentation/view/sign_in_view.dart';
 import 'package:mandoob/features/history/logic/history_cubit.dart';
 import 'package:mandoob/features/history/presentation/dates_view.dart';
 import 'package:mandoob/features/history/presentation/history_view.dart';
-import 'package:mandoob/features/home/logic/home_cubit/home_cubit.dart';
 import 'package:mandoob/features/home/logic/home_mandop_details_cubit/home_mandop_details_cubit.dart';
 import 'package:mandoob/features/home/presentation/view/home_view.dart';
+import 'package:mandoob/features/onboarding/presentation/onboarding_screen_view.dart';
 import 'package:mandoob/features/profile/logic/cubit/profile_cubit.dart';
 import 'package:mandoob/features/profile/presentation/profile_screen.dart';
 import 'package:mandoob/features/splash/presentation/view/splash_view.dart';
-import 'package:mandoob/features/onboarding/presentation/onboarding_screen_view.dart';
 
 class AppRouter {
   static const String splash = "/";

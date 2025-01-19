@@ -7,11 +7,12 @@ class DateModel extends StatelessWidget {
   final String date;
   final String ponits;
 
-  const DateModel(
-      {super.key,
-      required this.month,
-      required this.date,
-      required this.ponits});
+  const DateModel({
+    super.key,
+    required this.month,
+    required this.date,
+    required this.ponits,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +31,8 @@ class DateModel extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    textDirection: TextDirection.rtl,
                     month,
+                    textDirection: TextDirection.rtl,
                     style: GoogleFonts.cairo(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
@@ -50,8 +51,8 @@ class DateModel extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(right: 5.0.r, top: 5.0.r),
                 child: Text(
-                  textDirection: TextDirection.rtl,
                   date,
+                  textDirection: TextDirection.rtl,
                   style: GoogleFonts.cairo(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w400,
@@ -62,8 +63,8 @@ class DateModel extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(right: 5.0.r, top: 5.0.r),
                 child: Text(
-                  textDirection: TextDirection.rtl,
                   ponits,
+                  textDirection: TextDirection.rtl,
                   style: GoogleFonts.cairo(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w700,

@@ -1,13 +1,15 @@
 // ignore_for_file: avoid_print
 
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:mandoob/features/auth/sign_in/data/models/login_request_body.dart';
-import 'package:mandoob/features/auth/sign_in/data/repos/login_repo.dart';
-import 'package:mandoob/features/auth/sign_in/logic/cubit/login_state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mandoob/core/api/dio_factory.dart';
 import 'package:mandoob/core/cache/cache_helper.dart';
 import 'package:mandoob/core/cache/cache_keys.dart';
+import 'package:mandoob/features/auth/sign_in/data/models/login_request_body.dart';
+import 'package:mandoob/features/auth/sign_in/data/repos/login_repo.dart';
+import 'package:mandoob/features/auth/sign_in/logic/cubit/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
@@ -25,6 +27,7 @@ class LoginCubit extends Cubit<LoginState> {
       response.when(success: (loginResponse) async {
         print("Login Success: ${loginResponse.data?.token}");
         await saveUserToken(loginResponse.data?.token ?? '');
+        log('😌😌😌😌😌😌😌😌😌😌😌😌 ${loginResponse.data?.token} 😌😌😌😌😌😌😌😌😌😌😌😌');
         emit(LoginState.success(loginResponse));
       }, failure: (error) {
         print("Login Failed: $error");

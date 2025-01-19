@@ -4,13 +4,11 @@ import 'package:mandoob/core/utils/app_colors.dart';
 import 'package:mandoob/features/navbar/profile_navbar.dart';
 import 'package:mandoob/features/profile/logic/cubit/profile_cubit.dart';
 import 'package:mandoob/features/profile/logic/cubit/profile_state.dart';
-import 'package:mandoob/features/profile/presentation/widgets/mandop_profile_image.dart';
 import 'package:mandoob/features/profile/presentation/widgets/mandop_details.dart';
+import 'package:mandoob/features/profile/presentation/widgets/mandop_profile_image.dart';
 
 class ProfileBody extends StatelessWidget {
-  const ProfileBody({
-    super.key,
-  });
+  const ProfileBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +33,14 @@ class ProfileBody extends StatelessWidget {
                     child: Column(children: [
                       MandopProfileImage(
                         userData: userData,
-                        userImage: userData.profileImage,
+                        userImage: userData.data!.user!.profileImage,
                       ),
                       MandopProfileDetailsWidget(
                         userData: userData,
-                        name: "${userData.fName} ${userData.lName}",
-                        eMail: userData.email,
-                        phoneNumber: userData.phoneNumber,
+                        name:
+                            "${userData.data!.user!.fName} ${userData.data!.user!.lName}",
+                        eMail: userData.data!.user!.email,
+                        phoneNumber: userData.data!.user!.phoneNumber,
                       ),
                     ]),
                   );

@@ -57,8 +57,8 @@ class _SignInViewState extends State<SignInView> {
                 Padding(
                   padding: EdgeInsets.only(right: 8.0.r),
                   child: Text(
-                    textAlign: TextAlign.right,
                     "البريد الالكتروني  ",
+                    textAlign: TextAlign.right,
                     style: GoogleFonts.cairo(
                       color: AppColors.emailAndPasswordFontGreyColor,
                       fontSize: 16.sp,
@@ -74,8 +74,8 @@ class _SignInViewState extends State<SignInView> {
                 Padding(
                   padding: EdgeInsets.only(right: 8.0.r),
                   child: Text(
-                    textAlign: TextAlign.right,
                     "كلمة المرور",
+                    textAlign: TextAlign.right,
                     style: GoogleFonts.cairo(
                       color: AppColors.emailAndPasswordFontGreyColor,
                       fontSize: 16.sp,

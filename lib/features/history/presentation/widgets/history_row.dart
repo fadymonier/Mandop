@@ -33,20 +33,20 @@ class HistoryRow extends StatelessWidget {
   }
 }
 
- // const Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //   children: [
-          //     HistoryBodyContainerModel(
-          //       title: 'عدد الاوردات',
-          //       variable: '50',
-          //       subTitle: 'جنيه',
-          //       imagePath: 'assets/images/historyOrders.png',
-          //     ),
-          //     HistoryBodyContainerModel(
-          //       title: 'عدد العملاء',
-          //       variable: '100',
-          //       subTitle: 'عميل',
-          //       imagePath: 'assets/images/historyClients.png',
-          //     ),
-          //   ],
-          // ),
+// const Row(
+//   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//   children: [
+//     HistoryBodyContainerModel(
+//       title: 'عدد الاوردات',
+//       variable: '50',
+//       subTitle: 'جنيه',
+//       imagePath: 'assets/images/historyOrders.png',
+//     ),
+//     HistoryBodyContainerModel(
+//       title: 'عدد العملاء',
+//       variable: '100',
+//       subTitle: 'عميل',
+//       imagePath: 'assets/images/historyClients.png',
+//     ),
+//   ],
+// ),

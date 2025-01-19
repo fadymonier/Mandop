@@ -32,7 +32,7 @@ class MandopProfileImage extends StatelessWidget {
             height: 110.h,
             child: CircleAvatar(
               backgroundImage: NetworkImage(
-                userData.profileImage,
+                userData.data!.user!.profileImage,
               ),
             ),
           ),

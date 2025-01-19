@@ -16,6 +16,8 @@ import 'package:mandoob/features/profile/data/api/profile_api_service.dart';
 import 'package:mandoob/features/profile/data/repo/profile_repo.dart';
 import 'package:mandoob/features/profile/logic/cubit/profile_cubit.dart';
 
+import '../../features/home/logic/getDataHome/cubit.dart';
+
 final getit = GetIt.instance;
 
 Future<void> setupGetIt() async {
@@ -45,4 +47,5 @@ Future<void> setupGetIt() async {
   getit.registerLazySingleton<PointsHistoryRepo>(
       () => PointsHistoryRepo(getit()));
   getit.registerFactory<HistoryCubit>(() => HistoryCubit(getit()));
+  getit.registerFactory<DataCubitFreezed>(() => DataCubitFreezed(getit()));
 }

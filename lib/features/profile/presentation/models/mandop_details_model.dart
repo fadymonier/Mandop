@@ -26,11 +26,11 @@ class MandopDetailsModel extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
+                title,
                 textDirection: TextDirection.rtl,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.start,
                 maxLines: 1,
-                title,
                 style: GoogleFonts.cairo(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
@@ -38,11 +38,11 @@ class MandopDetailsModel extends StatelessWidget {
                 ),
               ),
               Text(
+                subTitle,
                 textDirection: TextDirection.rtl,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.start,
                 maxLines: 1,
-                subTitle,
                 style: GoogleFonts.cairo(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w400,

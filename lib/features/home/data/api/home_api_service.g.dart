@@ -56,7 +56,7 @@ class _HomeApiService implements HomeApiService {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'api/v1/sales_person/profile/',
+            'api/v1/sales_person/profile',
             queryParameters: queryParameters,
             data: _data,
           )
