@@ -2,6 +2,8 @@
 
 import 'package:dio/dio.dart';
 import 'package:mandoob/core/api/api_constnats.dart';
+import 'package:mandoob/core/cache/cache_helper.dart';
+import 'package:mandoob/core/cache/cache_keys.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
@@ -19,6 +21,8 @@ class DioFactory {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
+            'Authorization':
+                'Bearer ${SharedPrefHelper.getString(SharedPrefKeys.userToken)}',
           },
         ),
       );

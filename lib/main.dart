@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mandoob/core/cache/cache_helper.dart';
 import 'package:mandoob/core/cache/cache_keys.dart';
-import 'package:mandoob/core/extensions/navigate.dart';
+import 'package:mandoob/core/extensions/extensions.dart';
 import 'package:mandoob/core/routes/app_router.dart';
 import 'package:mandoob/core/services/dependency_injection.dart';
 
@@ -27,11 +27,12 @@ class MandoobApp extends StatelessWidget {
       designSize: const Size(390, 844),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) => const MaterialApp(
+      builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.system,
         // initial route
-        initialRoute: AppRouter.onBoarding,
+        initialRoute: isLoggedInUser ? AppRouter.home : AppRouter.onBoarding,
+        //AppRouter.onBoarding,
         onGenerateRoute: AppRouter.generateRoute,
       ),
     );
@@ -41,7 +42,7 @@ class MandoobApp extends StatelessWidget {
 checkIfLoggedInUser() async {
   String? userToken =
       await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
-  if (!userToken!.isNullOrEmpty()) {
+  if (!userToken.isNullOrEmpty()) {
     isLoggedInUser = true;
   } else {
     isLoggedInUser = false;

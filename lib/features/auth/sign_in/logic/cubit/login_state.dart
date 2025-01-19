@@ -10,3 +10,4 @@ class LoginState<T> with _$LoginState<T> {
   const factory LoginState.error({required String error}) = Error;
   const factory LoginState.loggedOut() = LoggedOut;
 }
+//dart run build_runner build --delete-conflicting-outputs

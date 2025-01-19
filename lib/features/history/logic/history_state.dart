@@ -13,3 +13,4 @@ class HistoryState with _$HistoryState {
   const factory HistoryState.historyError(ErrorHandler? errorHandler) =
       _HistoryError;
 }
+//dart run build_runner build --delete-conflicting-outputs

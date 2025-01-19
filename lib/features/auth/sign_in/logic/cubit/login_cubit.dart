@@ -26,8 +26,8 @@ class LoginCubit extends Cubit<LoginState> {
 
       response.when(success: (loginResponse) async {
         print("Login Success: ${loginResponse.data?.token}");
-        await saveUserToken(loginResponse.data?.token ?? '');
-        log('😌😌😌😌😌😌😌😌😌😌😌😌 ${loginResponse.data?.token} 😌😌😌😌😌😌😌😌😌😌😌😌');
+        await saveUserToken(loginResponse.data?.token ?? "");
+        log(' ${loginResponse.data?.token} ');
         emit(LoginState.success(loginResponse));
       }, failure: (error) {
         print("Login Failed: $error");
