@@ -84,6 +84,9 @@ class SignOutWidget extends StatelessWidget {
             },
           );
           if (confirm == true) {
+            await SharedPrefHelper.clearAllSecuredData();
+            await SharedPrefHelper.removeData(SharedPrefKeys.userToken);
+            DioFactory.removeTokenFromHeader();
             Navigator.pushReplacementNamed(context, '/SignIn');
           }
         },
