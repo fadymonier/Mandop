@@ -18,22 +18,20 @@ class DioFactory {
           baseUrl: ApiConstnats.baseUrl,
           connectTimeout: const Duration(seconds: 30),
           receiveTimeout: const Duration(seconds: 30),
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Authorization':
-                'Bearer ${SharedPrefHelper.getString(SharedPrefKeys.userToken)}',
-          },
         ),
       );
+      addDioHeaders();
       addDioInterceptor();
     }
     return dio!;
   }
 
-  static void addDioHeaers() {
+  /// Add token into the headers
+  static void addDioHeaders() async {
     dio?.options.headers = {
       'Accept': 'application/json',
+      'Authorization':
+          'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
     };
   }
 

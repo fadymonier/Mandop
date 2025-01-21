@@ -15,8 +15,8 @@ class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
 
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   void emitLoginStates(LoginRequestBody loginRequestBody) async {
@@ -25,16 +25,16 @@ class LoginCubit extends Cubit<LoginState> {
       final response = await _loginRepo.login(loginRequestBody);
 
       response.when(success: (loginResponse) async {
-        print("Login Success: ${loginResponse.data?.token}");
-        await saveUserToken(loginResponse.data?.token ?? "");
-        log(' ${loginResponse.data?.token} ');
+        final token = loginResponse.data?.token ?? "";
+        log("Login Success: $token");
+        await saveUserToken(token);
         emit(LoginState.success(loginResponse));
       }, failure: (error) {
-        print("Login Failed: $error");
+        log("Login Failed: ${error.apiErrorModel.message}");
         emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
       });
     } catch (e) {
-      print("Error: $e");
+      log("Error: $e");
       emit(const LoginState.error(error: "An unexpected error occurred"));
     }
   }
@@ -54,5 +54,13 @@ class LoginCubit extends Cubit<LoginState> {
 
     // ignore: use_build_context_synchronously
     Navigator.pushReplacementNamed(context, '/SignIn');
+  }
+
+  // Close the cubit
+  @override
+  Future<void> close() {
+    emailController.dispose();
+    passwordController.dispose();
+    return super.close();
   }
 }

@@ -26,7 +26,7 @@ Future<void> setupGetIt() async {
 
   // Login
   getit.registerLazySingleton<LoginRepo>(() => LoginRepo(getit()));
-  getit.registerFactory<LoginCubit>(() => LoginCubit(getit()));
+  getit.registerFactory<LoginCubit>(() => LoginCubit(getit<LoginRepo>()));
 
   // Home
   getit.registerLazySingleton<HomeApiService>(() => HomeApiService(dio));

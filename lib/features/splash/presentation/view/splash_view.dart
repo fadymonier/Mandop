@@ -1,5 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mandoob/core/cache/cache_helper.dart';
+import 'package:mandoob/core/cache/cache_keys.dart';
+import 'package:mandoob/core/routes/app_router.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
 
 class SplashView extends StatefulWidget {
@@ -13,7 +18,27 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    delayedNavigate(context, "/onBoarding");
+    checkIfLoggedInUser().then((_) {
+      delayedNavigate(context);
+    });
+  }
+
+  Future<void> checkIfLoggedInUser() async {
+    String? userToken =
+        await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+    if (userToken != null && userToken.isNotEmpty) {
+      isLoggedInUser = true;
+    } else {
+      isLoggedInUser = false;
+    }
+  }
+
+  void delayedNavigate(BuildContext context) {
+    if (isLoggedInUser) {
+      Navigator.pushReplacementNamed(context, AppRouter.home);
+    } else {
+      Navigator.pushReplacementNamed(context, AppRouter.onBoarding);
+    }
   }
 
   @override
@@ -27,7 +52,6 @@ class _SplashViewState extends State<SplashView> {
           children: [
             Image.asset(
               "assets/images/app_logo.png",
-              // fit: BoxFit.cover,
               height: 150.h,
             )
           ],
@@ -35,14 +59,4 @@ class _SplashViewState extends State<SplashView> {
       ),
     );
   }
-}
-
-void delayedNavigate(BuildContext context, String path) {
-  Future.delayed(
-    const Duration(seconds: 2),
-    () {
-      // ignore: use_build_context_synchronously
-      Navigator.pushReplacementNamed(context, path);
-    },
-  );
 }
