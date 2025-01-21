@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:loading_indicator/loading_indicator.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
 
 import '../../../../core/services/dependency_injection.dart';
@@ -26,8 +27,13 @@ class _MandopHomeDetailsState extends State<MandopHomeDetails> {
           return state.when(
             start: () {
               return Center(
-                child: CircularProgressIndicator(
-                  color: AppColors.navBarIconSelectedColor,
+                child: SizedBox(
+                  height: 50.h,
+                  width: 50.w,
+                  child: LoadingIndicator(
+                    indicatorType: Indicator.lineScalePulseOut,
+                    colors: [AppColors.navBarIconSelectedColor],
+                  ),
                 ),
               );
             },
