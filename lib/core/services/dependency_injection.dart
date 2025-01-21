@@ -6,7 +6,7 @@ import 'package:mandoob/features/auth/sign_in/data/repos/login_repo.dart';
 import 'package:mandoob/features/auth/sign_in/logic/cubit/login_cubit.dart';
 import 'package:mandoob/features/history/data/api/history_api_services.dart';
 import 'package:mandoob/features/history/data/repo/points_history_repo.dart';
-import 'package:mandoob/features/history/logic/history_cubit.dart';
+import 'package:mandoob/features/history/logic/history_cubit/history_cubit.dart';
 import 'package:mandoob/features/home/data/api/home_api_service.dart';
 import 'package:mandoob/features/home/data/repo/home_mandop_details_repo.dart';
 import 'package:mandoob/features/home/data/repo/home_repo.dart';

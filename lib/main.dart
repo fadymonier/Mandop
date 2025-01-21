@@ -32,7 +32,6 @@ class MandoobApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         // initial route
         initialRoute: isLoggedInUser ? AppRouter.home : AppRouter.onBoarding,
-        //AppRouter.onBoarding,
         onGenerateRoute: AppRouter.generateRoute,
       ),
     );

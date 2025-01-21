@@ -17,8 +17,6 @@ class ClientsNumberWidget extends StatelessWidget {
           current is HomeSuccess ||
           current is HomeError,
       builder: (context, state) {
-        // Debugging: Print the state for troubleshooting
-
         return state.maybeWhen(
           homeLoading: () {
             return SizedBox(

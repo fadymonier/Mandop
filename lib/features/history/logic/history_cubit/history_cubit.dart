@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mandoob/features/history/data/repo/points_history_repo.dart';
-import 'package:mandoob/features/history/logic/history_state.dart';
+import 'package:mandoob/features/history/logic/history_cubit/history_state.dart';
 
 class HistoryCubit extends Cubit<HistoryState> {
   final PointsHistoryRepo _pointsHistoryRepo;

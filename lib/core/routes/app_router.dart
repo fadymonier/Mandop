@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mandoob/core/services/dependency_injection.dart';
 import 'package:mandoob/features/auth/sign_in/logic/cubit/login_cubit.dart';
 import 'package:mandoob/features/auth/sign_in/presentation/view/sign_in_view.dart';
-import 'package:mandoob/features/history/logic/history_cubit.dart';
+import 'package:mandoob/features/history/logic/history_cubit/history_cubit.dart';
 import 'package:mandoob/features/history/presentation/dates_view.dart';
 import 'package:mandoob/features/history/presentation/history_view.dart';
 import 'package:mandoob/features/home/logic/home_mandop_details_cubit/home_mandop_details_cubit.dart';

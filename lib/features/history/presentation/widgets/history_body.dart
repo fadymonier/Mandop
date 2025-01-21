@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mandoob/core/utils/app_colors.dart';
 import 'package:mandoob/features/history/presentation/widgets/history_row.dart';
 import 'package:mandoob/features/history/presentation/widgets/mandop_history_profile_image.dart';
 import 'package:mandoob/features/navbar/history_navbar.dart';
@@ -24,9 +23,7 @@ class HistoryBody extends StatelessWidget {
             height: 20.h,
           ),
           // Placeholder for the history row
-          const HistoryRow(
-              // Use null or dummy data to match the widget's UI
-              ),
+          const HistoryRow(),
           SizedBox(
             height: 20.h,
           ),

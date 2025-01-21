@@ -22,11 +22,7 @@ class OrdersNumberWidget extends StatelessWidget {
             return SizedBox(
               width: 172.w,
               height: 145.h,
-              child: Center(
-                child: CircularProgressIndicator(
-                  color: AppColors.buttonColor,
-                ),
-              ),
+              child: const SizedBox.shrink(),
             );
           },
           homeSuccess: (homeResponseModel) {

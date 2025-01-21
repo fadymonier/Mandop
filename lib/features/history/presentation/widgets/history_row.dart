@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mandoob/core/services/dependency_injection.dart';
 import 'package:mandoob/core/utils/app_colors.dart';
-import 'package:mandoob/features/history/logic/history_cubit.dart';
-import 'package:mandoob/features/history/logic/history_state.dart';
+import 'package:mandoob/features/history/logic/history_cubit/history_cubit.dart';
+import 'package:mandoob/features/history/logic/history_cubit/history_state.dart';
 import 'package:mandoob/features/history/presentation/models/history_body_model.dart';
 
 class HistoryRow extends StatefulWidget {
