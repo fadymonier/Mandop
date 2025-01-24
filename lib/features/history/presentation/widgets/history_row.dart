@@ -22,70 +22,67 @@ class _HistoryRowState extends State<HistoryRow> {
     return BlocProvider(
       create: (context) => getit<HistoryCubit>()..getHistoryData(),
       child: BlocBuilder<HistoryCubit, HistoryState>(
-        // bloc: getit<HistoryCubit>()..getHistoryData(),
         builder: (context, state) {
           return state.when(
-              historyLoading: () => Center(
-                    child: SizedBox(
-                      height: 50.h,
-                      width: 50.w,
-                      child: LoadingIndicator(
-                        indicatorType: Indicator.lineScalePulseOut,
-                        colors: [AppColors.navBarIconSelectedColor],
-                      ),
-                    ),
-                  ),
-              historySuccess: (response) {
-                if (response.data.points.isEmpty) {
-                  return Center(
-                    child: Text(
-                      'البيانات غير متوفرة',
-                      style:
-                          GoogleFonts.cairo(color: Colors.red, fontSize: 16.sp),
-                    ),
-                  );
-                }
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    HistoryBodyContainerModel(
-                      title: 'النقاط',
-                      variable: response
-                              .data.points["2025"]?["January"]?.totalPoints ??
-                          "",
-                      subTitle: 'نقطه',
-                      imagePath: 'assets/images/historyPoints.png',
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        // Navigator.pushNamed(context, '/Dates');
-                      },
-                      child: HistoryBodyContainerModel(
-                        title: 'الشهر',
-                        variable:
-                            response.data.points["2025"]?["January"]?.month ??
-                                "",
-                        subTitle: response.data.points["2025"]?["January"]?.year
-                                .toString() ??
-                            "",
-                        imagePath: 'assets/images/historyMonths.png',
-                      ),
-                    ),
-                  ],
-                );
-              },
-              initial: () {
-                return const SizedBox.shrink();
-              },
-              historyError: (errorHandler) {
+            historyLoading: () => Center(
+              child: SizedBox(
+                height: 50.h,
+                width: 50.w,
+                child: LoadingIndicator(
+                  indicatorType: Indicator.lineScalePulseOut,
+                  colors: [AppColors.navBarIconSelectedColor],
+                ),
+              ),
+            ),
+            historySuccess: (response) {
+              final data = response.data;
+
+              // لو البيانات غير متوفرة
+              if (data.totalPoints.isEmpty ||
+                  data.month.isEmpty ||
+                  data.year == 0) {
                 return Center(
                   child: Text(
-                    'Failed to load data',
+                    'البيانات غير متوفرة',
                     style:
                         GoogleFonts.cairo(color: Colors.red, fontSize: 16.sp),
                   ),
                 );
-              });
+              }
+
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  HistoryBodyContainerModel(
+                    title: 'النقاط',
+                    variable: data.totalPoints,
+                    subTitle: 'نقطة',
+                    imagePath: 'assets/images/historyPoints.png',
+                  ),
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, '/Dates'),
+                    child: HistoryBodyContainerModel(
+                      title: 'الشهر',
+                      variable: data.month,
+                      subTitle: data.year.toString(),
+                      imagePath: 'assets/images/historyMonths.png',
+                    ),
+                  ),
+                ],
+              );
+            },
+            initial: () {
+              return const SizedBox.shrink();
+            },
+            historyError: (errorHandler) {
+              return Center(
+                child: Text(
+                  'حدث خطأ غير متوقع',
+                  style: GoogleFonts.cairo(color: Colors.red, fontSize: 16.sp),
+                ),
+              );
+            },
+          );
         },
       ),
     );

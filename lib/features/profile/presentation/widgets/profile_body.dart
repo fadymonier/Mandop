@@ -38,7 +38,8 @@ class ProfileBody extends StatelessWidget {
                     ),
                   ),
                   profileSuccess: (response) {
-                    if (response.data!.user!.profileImage.isEmpty) {
+                    if (response.data!.branch!.latitude.isEmpty ||
+                        response.data!.branch!.longitude.isEmpty) {
                       return Center(
                         child: Text(
                           'البيانات غير متوفرة',
@@ -61,6 +62,10 @@ class ProfileBody extends StatelessWidget {
                               "${response.data!.user!.fName} ${response.data!.user!.lName}",
                           eMail: response.data!.user!.email,
                           phoneNumber: response.data!.user!.phoneNumber,
+                          latitude: response.data!.branch?.latitude ??
+                              "31.04008023130097",
+                          longitude: response.data!.branch?.longitude ??
+                              "31.383754837535662",
                         ),
                       ],
                     );
