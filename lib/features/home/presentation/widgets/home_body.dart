@@ -55,12 +55,11 @@ class HomeBody extends StatelessWidget {
                     },
                   ),
                   SizedBox(height: 20.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const ClientsNumberWidget(),
-                      SizedBox(width: 20.w),
-                      const OrdersNumberWidget(),
+                      ClientsNumberWidget(),
+                      OrdersNumberWidget(),
                     ],
                   ),
                   const Spacer(),

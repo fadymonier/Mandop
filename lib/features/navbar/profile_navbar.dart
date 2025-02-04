@@ -32,7 +32,7 @@ class ProfileNavbar extends StatelessWidget {
           top: -35.h,
           child: GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/History');
+                Navigator.pushNamed(context, '/Dates');
               },
               child: Image.asset("assets/images/historyUnselected.png",
                   width: 70.w)),

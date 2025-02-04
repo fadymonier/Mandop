@@ -17,7 +17,7 @@ class MandopDetailsModel extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 10.0.r),
       child: Container(
         width: double.infinity,
-        height: 80.h,
+        height: 90.h,
         color: AppColors.whiteColor,
         child: Padding(
           padding: EdgeInsets.all(16.0.r),

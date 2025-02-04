@@ -86,8 +86,8 @@ class _MandopHomeDetailsState extends State<MandopHomeDetails> {
                       ClipOval(
                         child: Image.network(
                           response.data!.user!.profileImage,
-                          width: 50.w,
-                          height: 50.h,
+                          width: 60.w,
+                          height: 60.h,
                           fit: BoxFit.fill,
                           loadingBuilder: (context, child, loadingProgress) {
                             if (loadingProgress == null) return child;

@@ -6,7 +6,7 @@ class ApiConstnats {
   static const String profile = "api/v1/sales_person/profile";
   static const String home = "api/v1/sales_person/home";
   static const String monthPoints =
-      "api/v1/sales_person/points-by-month/2025/Feb";
+      "/api/v1/sales_person/points-by-month/2025/January";
 }
 
 class ApiErrors {

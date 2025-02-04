@@ -18,13 +18,14 @@ class DateModel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 115.h,
+      height: 120.h,
       color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Row(
@@ -40,7 +41,7 @@ class DateModel extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 6.w,
+                    width: 8.w,
                   ),
                   Image.asset(
                     "assets/images/historyMonths.png",

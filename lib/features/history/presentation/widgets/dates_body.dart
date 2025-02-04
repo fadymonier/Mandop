@@ -1,60 +1,131 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:loading_indicator/loading_indicator.dart';
+import 'package:mandoob/core/api/error_handler.dart';
+import 'package:mandoob/core/services/dependency_injection.dart';
+import 'package:mandoob/core/utils/app_colors.dart';
+import 'package:mandoob/features/history/logic/date_cubit/cubit/date_cubit.dart';
+import 'package:mandoob/features/history/logic/date_cubit/cubit/date_state.dart';
 import 'package:mandoob/features/history/presentation/models/date_model.dart';
 import 'package:mandoob/features/navbar/history_navbar.dart';
 
 class DatesBody extends StatelessWidget {
   const DatesBody({super.key});
 
+  // ميثود لتحويل اسم الشهر من الإنجليزية إلى العربية
+  String getArabicMonth(String englishMonth) {
+    const monthNames = {
+      'January': 'يناير',
+      'February': 'فبراير',
+      'March': 'مارس',
+      'April': 'أبريل',
+      'May': 'مايو',
+      'June': 'يونيو',
+      'July': 'يوليو',
+      'August': 'أغسطس',
+      'September': 'سبتمبر',
+      'October': 'أكتوبر',
+      'November': 'نوفمبر',
+      'December': 'ديسمبر',
+    };
+
+    return monthNames[englishMonth] ??
+        englishMonth; // إذا لم يكن الشهر موجود، يرجع الاسم كما هو
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 650.h,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 20.h,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 10.0.r),
-                  child: const DateModel(
-                      month: "شهر سبتمبر", date: "30/9/2024", ponits: "600"),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 10.0.r),
-                  child: const DateModel(
-                      month: "شهر أغسطس", date: "30/8/2024", ponits: "1000"),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 10.0.r),
-                  child: const DateModel(
-                      month: "شهر يوليو", date: "31/7/2024", ponits: "800"),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 10.0.r),
-                  child: const DateModel(
-                      month: "شهر يونيو", date: "30/6/2024", ponits: "3000"),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 10.0.r),
-                  child: const DateModel(
-                      month: "شهر مايو", date: "30/5/2024", ponits: "2000"),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 10.0.r),
-                  child: const DateModel(
-                      month: "شهر ابريل", date: "30/4/2024", ponits: "600"),
-                ),
-              ],
+    return BlocProvider(
+      create: (context) => getit<DateCubit>()..getPointsByMonthData(),
+      child: Column(
+        children: [
+          Expanded(
+            child: BlocBuilder<DateCubit, DateState>(
+              builder: (context, state) {
+                return state.when(
+                  dateLoading: () => Center(
+                    child: SizedBox(
+                      height: 50.h,
+                      width: 50.w,
+                      child: LoadingIndicator(
+                        indicatorType: Indicator.lineScalePulseOut,
+                        colors: [AppColors.navBarIconSelectedColor],
+                      ),
+                    ),
+                  ),
+                  dateSuccess: (response) {
+                    final pointsHistoryData = response.data.points;
+
+                    final filteredMonths =
+                        pointsHistoryData.entries.expand((yearEntry) {
+                      return yearEntry.value.entries.where((monthEntry) {
+                        final points =
+                            int.tryParse(monthEntry.value.totalPoints) ?? 0;
+                        return points > 0;
+                      }).map((monthEntry) {
+                        final monthData = monthEntry.value;
+                        return {
+                          'month': getArabicMonth(
+                              monthData.month), // تحويل الشهر إلى عربي
+                          'year': monthData.year,
+                          'points': monthData.totalPoints,
+                        };
+                      });
+                    }).toList();
+
+                    if (filteredMonths.isEmpty) {
+                      return Center(
+                        child: Text(
+                          'لا توجد نقاط لهذا الشهر.',
+                          style: GoogleFonts.cairo(
+                            color: Colors.red,
+                            fontSize: 16.sp,
+                          ),
+                        ),
+                      );
+                    }
+
+                    return ListView.separated(
+                      separatorBuilder: (context, index) => SizedBox(
+                        height: 10.h,
+                      ),
+                      padding: EdgeInsets.symmetric(vertical: 10.h),
+                      itemCount: filteredMonths.length,
+                      itemBuilder: (context, index) {
+                        final monthData = filteredMonths[index];
+                        return GestureDetector(
+                          onTap: () => Navigator.pushNamed(context, '/History'),
+                          child: DateModel(
+                            month: monthData['month'] as String,
+                            date: monthData['year'].toString(),
+                            ponits: monthData['points'] as String,
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  initial: () => const SizedBox.shrink(),
+                  dateError: (ErrorHandler? errorHandler) {
+                    return Center(
+                      child: Text(
+                        'حدث خطأ غير متوقع',
+                        style: GoogleFonts.cairo(
+                          color: Colors.red,
+                          fontSize: 16.sp,
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
             ),
           ),
-        ),
-        const Spacer(),
-        const HistoryNavbar(),
-      ],
+          const Spacer(),
+          const HistoryNavbar(),
+        ],
+      ),
     );
   }
 }

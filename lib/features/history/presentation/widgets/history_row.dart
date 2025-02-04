@@ -17,75 +17,92 @@ class HistoryRow extends StatefulWidget {
 }
 
 class _HistoryRowState extends State<HistoryRow> {
+  // ميثود لتحويل اسم الشهر من الإنجليزية إلى العربية
+  String getArabicMonth(String englishMonth) {
+    const monthNames = {
+      'January': 'يناير',
+      'February': 'فبراير',
+      'March': 'مارس',
+      'April': 'أبريل',
+      'May': 'مايو',
+      'June': 'يونيو',
+      'July': 'يوليو',
+      'August': 'أغسطس',
+      'September': 'سبتمبر',
+      'October': 'أكتوبر',
+      'November': 'نوفمبر',
+      'December': 'ديسمبر',
+    };
+
+    return monthNames[englishMonth] ??
+        englishMonth; // إذا لم يكن الشهر موجود، يرجع الاسم كما هو
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getit<HistoryCubit>()..getHistoryData(),
       child: BlocBuilder<HistoryCubit, HistoryState>(
-        // bloc: getit<HistoryCubit>()..getHistoryData(),
         builder: (context, state) {
           return state.when(
-              historyLoading: () => Center(
-                    child: SizedBox(
-                      height: 50.h,
-                      width: 50.w,
-                      child: LoadingIndicator(
-                        indicatorType: Indicator.lineScalePulseOut,
-                        colors: [AppColors.navBarIconSelectedColor],
-                      ),
-                    ),
-                  ),
-              historySuccess: (response) {
-                if (response.data.points.isEmpty) {
-                  return Center(
-                    child: Text(
-                      'البيانات غير متوفرة',
-                      style:
-                          GoogleFonts.cairo(color: Colors.red, fontSize: 16.sp),
-                    ),
-                  );
-                }
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    HistoryBodyContainerModel(
-                      title: 'النقاط',
-                      variable: response
-                              .data.points["2025"]?["January"]?.totalPoints ??
-                          "",
-                      subTitle: 'نقطه',
-                      imagePath: 'assets/images/historyPoints.png',
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        // Navigator.pushNamed(context, '/Dates');
-                      },
-                      child: HistoryBodyContainerModel(
-                        title: 'الشهر',
-                        variable:
-                            response.data.points["2025"]?["January"]?.month ??
-                                "",
-                        subTitle: response.data.points["2025"]?["January"]?.year
-                                .toString() ??
-                            "",
-                        imagePath: 'assets/images/historyMonths.png',
-                      ),
-                    ),
-                  ],
-                );
-              },
-              initial: () {
-                return const SizedBox.shrink();
-              },
-              historyError: (errorHandler) {
+            historyLoading: () => Center(
+              child: SizedBox(
+                height: 50.h,
+                width: 50.w,
+                child: LoadingIndicator(
+                  indicatorType: Indicator.lineScalePulseOut,
+                  colors: [AppColors.navBarIconSelectedColor],
+                ),
+              ),
+            ),
+            historySuccess: (response) {
+              final data = response.data;
+
+              if (data.totalPoints.isEmpty ||
+                  data.month.isEmpty ||
+                  data.year == 0) {
                 return Center(
                   child: Text(
-                    'Failed to load data',
+                    'البيانات غير متوفرة',
                     style:
                         GoogleFonts.cairo(color: Colors.red, fontSize: 16.sp),
                   ),
                 );
-              });
+              }
+
+              // تحويل الشهر من الإنجليزية إلى العربية
+              final arabicMonth = getArabicMonth(data.month);
+
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  HistoryBodyContainerModel(
+                    title: 'النقاط',
+                    variable: data.totalPoints,
+                    subTitle: 'نقطة',
+                    imagePath: 'assets/images/historyPoints.png',
+                  ),
+                  HistoryBodyContainerModel(
+                    title: 'الشهر',
+                    variable: arabicMonth, // عرض الشهر بالعربي
+                    subTitle: data.year.toString(),
+                    imagePath: 'assets/images/historyMonths.png',
+                  ),
+                ],
+              );
+            },
+            initial: () {
+              return const SizedBox.shrink();
+            },
+            historyError: (errorHandler) {
+              return Center(
+                child: Text(
+                  'حدث خطأ غير متوقع',
+                  style: GoogleFonts.cairo(color: Colors.red, fontSize: 16.sp),
+                ),
+              );
+            },
+          );
         },
       ),
     );

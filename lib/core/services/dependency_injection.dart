@@ -5,7 +5,9 @@ import 'package:mandoob/core/api/dio_factory.dart';
 import 'package:mandoob/features/auth/sign_in/data/repos/login_repo.dart';
 import 'package:mandoob/features/auth/sign_in/logic/cubit/login_cubit.dart';
 import 'package:mandoob/features/history/data/api/history_api_services.dart';
+import 'package:mandoob/features/history/data/repo/points_by_month_repo.dart';
 import 'package:mandoob/features/history/data/repo/points_history_repo.dart';
+import 'package:mandoob/features/history/logic/date_cubit/cubit/date_cubit.dart';
 import 'package:mandoob/features/history/logic/history_cubit/history_cubit.dart';
 import 'package:mandoob/features/home/data/api/home_api_service.dart';
 import 'package:mandoob/features/home/data/repo/home_mandop_details_repo.dart';
@@ -43,9 +45,14 @@ Future<void> setupGetIt() async {
   getit.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getit()));
   getit.registerFactory<ProfileCubit>(() => ProfileCubit(getit()));
 
-  // History
+  // History (Current Month Points)
   getit.registerLazySingleton<HistoryApiService>(() => HistoryApiService(dio));
   getit.registerLazySingleton<PointsHistoryRepo>(
       () => PointsHistoryRepo(getit()));
   getit.registerFactory<HistoryCubit>(() => HistoryCubit(getit()));
+
+  //Dates (Points By Month)
+  getit.registerLazySingleton<PointsByMonthRepo>(
+      () => PointsByMonthRepo(getit()));
+  getit.registerFactory<DateCubit>(() => DateCubit(getit()));
 }
