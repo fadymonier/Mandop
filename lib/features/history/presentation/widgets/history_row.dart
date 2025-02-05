@@ -17,6 +17,27 @@ class HistoryRow extends StatefulWidget {
 }
 
 class _HistoryRowState extends State<HistoryRow> {
+  // ميثود لتحويل اسم الشهر من الإنجليزية إلى العربية
+  String getArabicMonth(String englishMonth) {
+    const monthNames = {
+      'January': 'يناير',
+      'February': 'فبراير',
+      'March': 'مارس',
+      'April': 'أبريل',
+      'May': 'مايو',
+      'June': 'يونيو',
+      'July': 'يوليو',
+      'August': 'أغسطس',
+      'September': 'سبتمبر',
+      'October': 'أكتوبر',
+      'November': 'نوفمبر',
+      'December': 'ديسمبر',
+    };
+
+    return monthNames[englishMonth] ??
+        englishMonth; // إذا لم يكن الشهر موجود، يرجع الاسم كما هو
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -37,7 +58,6 @@ class _HistoryRowState extends State<HistoryRow> {
             historySuccess: (response) {
               final data = response.data;
 
-              // لو البيانات غير متوفرة
               if (data.totalPoints.isEmpty ||
                   data.month.isEmpty ||
                   data.year == 0) {
@@ -50,6 +70,9 @@ class _HistoryRowState extends State<HistoryRow> {
                 );
               }
 
+              // تحويل الشهر من الإنجليزية إلى العربية
+              final arabicMonth = getArabicMonth(data.month);
+
               return Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -59,14 +82,11 @@ class _HistoryRowState extends State<HistoryRow> {
                     subTitle: 'نقطة',
                     imagePath: 'assets/images/historyPoints.png',
                   ),
-                  GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, '/Dates'),
-                    child: HistoryBodyContainerModel(
-                      title: 'الشهر',
-                      variable: data.month,
-                      subTitle: data.year.toString(),
-                      imagePath: 'assets/images/historyMonths.png',
-                    ),
+                  HistoryBodyContainerModel(
+                    title: 'الشهر',
+                    variable: arabicMonth, // عرض الشهر بالعربي
+                    subTitle: data.year.toString(),
+                    imagePath: 'assets/images/historyMonths.png',
                   ),
                 ],
               );

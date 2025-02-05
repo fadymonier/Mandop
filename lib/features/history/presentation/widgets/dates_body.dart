@@ -14,6 +14,27 @@ import 'package:mandoob/features/navbar/history_navbar.dart';
 class DatesBody extends StatelessWidget {
   const DatesBody({super.key});
 
+  // ميثود لتحويل اسم الشهر من الإنجليزية إلى العربية
+  String getArabicMonth(String englishMonth) {
+    const monthNames = {
+      'January': 'يناير',
+      'February': 'فبراير',
+      'March': 'مارس',
+      'April': 'أبريل',
+      'May': 'مايو',
+      'June': 'يونيو',
+      'July': 'يوليو',
+      'August': 'أغسطس',
+      'September': 'سبتمبر',
+      'October': 'أكتوبر',
+      'November': 'نوفمبر',
+      'December': 'ديسمبر',
+    };
+
+    return monthNames[englishMonth] ??
+        englishMonth; // إذا لم يكن الشهر موجود، يرجع الاسم كما هو
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -46,7 +67,8 @@ class DatesBody extends StatelessWidget {
                       }).map((monthEntry) {
                         final monthData = monthEntry.value;
                         return {
-                          'month': monthData.month,
+                          'month': getArabicMonth(
+                              monthData.month), // تحويل الشهر إلى عربي
                           'year': monthData.year,
                           'points': monthData.totalPoints,
                         };
@@ -73,10 +95,13 @@ class DatesBody extends StatelessWidget {
                       itemCount: filteredMonths.length,
                       itemBuilder: (context, index) {
                         final monthData = filteredMonths[index];
-                        return DateModel(
-                          month: monthData['month'] as String,
-                          date: monthData['year'].toString(),
-                          ponits: monthData['points'] as String,
+                        return GestureDetector(
+                          onTap: () => Navigator.pushNamed(context, '/History'),
+                          child: DateModel(
+                            month: monthData['month'] as String,
+                            date: monthData['year'].toString(),
+                            ponits: monthData['points'] as String,
+                          ),
                         );
                       },
                     );

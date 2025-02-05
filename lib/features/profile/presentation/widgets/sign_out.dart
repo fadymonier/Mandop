@@ -21,6 +21,7 @@ class SignOutWidget extends StatelessWidget {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
+                backgroundColor: AppColors.scaffoldBackgroundColor,
                 title: Center(
                   child: Text(
                     "تسجيل الخروج",

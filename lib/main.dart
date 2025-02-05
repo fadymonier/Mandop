@@ -12,15 +12,24 @@ void main() async {
   await SharedPrefHelper.init();
   await ScreenUtil.ensureScreenSize();
   await checkIfLoggedInUser();
-
   runApp(
     const MandoobApp(),
   );
 }
 
+bool isLoggedInUser = false;
+checkIfLoggedInUser() async {
+  String? userToken =
+      await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+  if (!userToken.isNullOrEmpty()) {
+    isLoggedInUser = true;
+  } else {
+    isLoggedInUser = false;
+  }
+}
+
 class MandoobApp extends StatelessWidget {
   const MandoobApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -37,14 +46,3 @@ class MandoobApp extends StatelessWidget {
     );
   }
 }
-
-checkIfLoggedInUser() async {
-  String? userToken =
-      await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
-  if (!userToken.isNullOrEmpty()) {
-    isLoggedInUser = true;
-  } else {
-    isLoggedInUser = false;
-  }
-}
-//dart run build_runner build --delete-conflicting-outputs
