@@ -79,7 +79,7 @@ class OrdersNumberWidget extends StatelessWidget {
               height: 145.h,
               child: Center(
                 child: Text(
-                  'Error!',
+                  '',
                   style: TextStyle(
                     color: Colors.red,
                     fontSize: 16.sp,

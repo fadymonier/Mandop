@@ -143,6 +143,9 @@ ApiErrorModel _handleError(DioException error) {
       return DataSource.CANCEL.getFailure();
     case DioExceptionType.connectionError:
     case DioExceptionType.unknown:
+      if (error.response?.statusCode == ResponseCode.UNAUTORISED) {
+        return DataSource.UNAUTORISED.getFailure();
+      }
       return DataSource.DEFAULT.getFailure();
     default:
       return DataSource.DEFAULT.getFailure();

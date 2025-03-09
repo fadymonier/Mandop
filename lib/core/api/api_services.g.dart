@@ -10,7 +10,7 @@ part of 'api_services.dart';
 
 class _ApiService implements ApiService {
   _ApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://admin.tasweka.com/';
+    baseUrl ??= 'https://demo.tasweka.com/';
   }
 
   final Dio _dio;

@@ -10,7 +10,7 @@ part of 'profile_api_service.dart';
 
 class _ProfileApiService implements ProfileApiService {
   _ProfileApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://admin.tasweka.com/';
+    baseUrl ??= 'https://demo.tasweka.com/';
   }
 
   final Dio _dio;

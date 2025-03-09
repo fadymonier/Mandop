@@ -116,8 +116,8 @@ class _MandopHomeDetailsState extends State<MandopHomeDetails> {
             failed: (errorMessage) {
               return Center(
                 child: Text(
-                  'Failed to load data',
-                  style: TextStyle(color: Colors.red, fontSize: 16.sp),
+                  '',
+                  style: TextStyle(color: Colors.red, fontSize: 20.sp),
                 ),
               );
             },
