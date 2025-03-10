@@ -10,7 +10,7 @@ part of 'history_api_services.dart';
 
 class _HistoryApiService implements HistoryApiService {
   _HistoryApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://admin.tasweka.com/';
+    baseUrl ??= 'https://demo.tasweka.com/';
   }
 
   final Dio _dio;

@@ -1,0 +1,2 @@
+D:/TeamYea/New folder/mandoob/mandoob/android/app/.cxx/Debug/r4x3h4y1/x86_64/CMakeFiles/edit_cache.dir
+D:/TeamYea/New folder/mandoob/mandoob/android/app/.cxx/Debug/r4x3h4y1/x86_64/CMakeFiles/rebuild_cache.dir

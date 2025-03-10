@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mandoob/core/services/dependency_injection.dart';
 import 'package:mandoob/features/home/logic/home_cubit/home_cubit.dart';
 import 'package:mandoob/features/home/logic/home_cubit/home_state.dart';
@@ -43,10 +44,32 @@ class HomeBody extends StatelessWidget {
                         },
                         homeError: (_) {
                           return Center(
-                            child: Text(
-                              'Failed to load data. Please try again.',
-                              style:
-                                  TextStyle(color: Colors.red, fontSize: 16.sp),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SizedBox(height: 200.h),
+                                Image.asset(
+                                  'assets/images/alert.png',
+                                  height: 80.h,
+                                ),
+                                SizedBox(height: 40.h),
+                                Text(
+                                  'هذا الحساب غير مفعل ',
+                                  style: GoogleFonts.cairo(
+                                      color: Colors.black,
+                                      fontSize: 20.sp,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(height: 20.h),
+                                Text(
+                                  'يمكنك التواصل مع الشركه ',
+                                  style: GoogleFonts.cairo(
+                                      color: Colors.grey,
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
                             ),
                           );
                         },

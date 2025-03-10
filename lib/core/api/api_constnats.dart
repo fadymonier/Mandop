@@ -1,5 +1,5 @@
 class ApiConstnats {
-  static const String baseUrl = "https://admin.tasweka.com/";
+  static const String baseUrl = "https://demo.tasweka.com/";
   static const String login = "api/v1/sales_person/login";
   static const String logout = "api/v1/sales_person/logout";
   static const String pointsHistory = "api/v1/sales_person/points-history/";

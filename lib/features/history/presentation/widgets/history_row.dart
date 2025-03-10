@@ -17,7 +17,6 @@ class HistoryRow extends StatefulWidget {
 }
 
 class _HistoryRowState extends State<HistoryRow> {
-  // ميثود لتحويل اسم الشهر من الإنجليزية إلى العربية
   String getArabicMonth(String englishMonth) {
     const monthNames = {
       'January': 'يناير',
@@ -34,8 +33,7 @@ class _HistoryRowState extends State<HistoryRow> {
       'December': 'ديسمبر',
     };
 
-    return monthNames[englishMonth] ??
-        englishMonth; // إذا لم يكن الشهر موجود، يرجع الاسم كما هو
+    return monthNames[englishMonth] ?? englishMonth;
   }
 
   @override
@@ -70,23 +68,46 @@ class _HistoryRowState extends State<HistoryRow> {
                 );
               }
 
-              // تحويل الشهر من الإنجليزية إلى العربية
               final arabicMonth = getArabicMonth(data.month);
 
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  HistoryBodyContainerModel(
-                    title: 'النقاط',
-                    variable: data.totalPoints,
-                    subTitle: 'نقطة',
-                    imagePath: 'assets/images/historyPoints.png',
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      HistoryBodyContainerModel(
+                        title: 'النقاط',
+                        variable: data.totalPoints,
+                        subTitle: 'نقطة',
+                        imagePath: 'assets/images/historyPoints.png',
+                      ),
+                      HistoryBodyContainerModel(
+                        title: 'الشهر',
+                        variable: arabicMonth,
+                        subTitle: data.year.toString(),
+                        imagePath: 'assets/images/historyMonths.png',
+                      ),
+                    ],
                   ),
-                  HistoryBodyContainerModel(
-                    title: 'الشهر',
-                    variable: arabicMonth, // عرض الشهر بالعربي
-                    subTitle: data.year.toString(),
-                    imagePath: 'assets/images/historyMonths.png',
+                  SizedBox(height: 16.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      HistoryBodyContainerModel(
+                        title: 'عدد الاوردات',
+                        variable: data.totalOrders.toString(),
+                        subTitle: 'جنيه',
+                        imagePath: 'assets/images/historyOrders.png',
+                      ),
+                      HistoryBodyContainerModel(
+                        title: 'عدد العملاء',
+                        variable: data.totalClients.toString(),
+                        subTitle: "عميل",
+                        imagePath: 'assets/images/historyClients.png',
+                      ),
+                    ],
                   ),
                 ],
               );

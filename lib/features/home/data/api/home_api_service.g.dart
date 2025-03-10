@@ -10,7 +10,7 @@ part of 'home_api_service.dart';
 
 class _HomeApiService implements HomeApiService {
   _HomeApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://admin.tasweka.com/';
+    baseUrl ??= 'https://demo.tasweka.com/';
   }
 
   final Dio _dio;
