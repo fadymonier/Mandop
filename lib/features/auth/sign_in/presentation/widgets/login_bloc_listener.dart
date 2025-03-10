@@ -34,7 +34,8 @@ class LoginBlocListener extends StatelessWidget {
           },
           success: (loginResponse) {
             Navigator.pop(context);
-            Navigator.pushReplacementNamed(context, "/Home");
+            Navigator.pushNamedAndRemoveUntil(
+                context, "/Home", (route) => false);
           },
           error: (error) {
             setupErrorState(context, error);
