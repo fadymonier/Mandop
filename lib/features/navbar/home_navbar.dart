@@ -15,25 +15,33 @@ class HomeNavbar extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/Profile');
+                if (ModalRoute.of(context)?.settings.name != '/Profile') {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/Profile', (route) => false);
+                }
               },
               child: Image.asset("assets/images/profileNavbarUnselected.png",
                   width: 190.w),
             ),
             GestureDetector(
-                onTap: () {},
-                child: Image.asset("assets/images/homeNavbarSelected.png",
-                    width: 190.w)),
+              onTap: () {},
+              child: Image.asset("assets/images/homeNavbarSelected.png",
+                  width: 190.w),
+            ),
           ],
         ),
         Positioned(
           top: -35.h,
           child: GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/Dates');
-              },
-              child: Image.asset("assets/images/historyUnselected.png",
-                  width: 70.w)),
+            onTap: () {
+              if (ModalRoute.of(context)?.settings.name != '/Dates') {
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/Dates', (route) => false);
+              }
+            },
+            child:
+                Image.asset("assets/images/historyUnselected.png", width: 70.w),
+          ),
         ),
       ],
     );

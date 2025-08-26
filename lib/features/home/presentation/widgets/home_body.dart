@@ -10,6 +10,7 @@ import 'package:mandoob/features/home/presentation/widgets/mandop_home_details.d
 import 'package:mandoob/features/home/presentation/widgets/orders_number.dart';
 import 'package:mandoob/features/home/presentation/widgets/total_points.dart';
 import 'package:mandoob/features/navbar/home_navbar.dart';
+import 'package:mandoob/features/profile/presentation/widgets/sign_out.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -69,6 +70,8 @@ class HomeBody extends StatelessWidget {
                                       fontSize: 16.sp,
                                       fontWeight: FontWeight.w500),
                                 ),
+                                SizedBox(height: 20.h),
+                                const SignOutWidget(),
                               ],
                             ),
                           );
